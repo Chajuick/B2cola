@@ -41,32 +41,32 @@ const mainCategory = [
 
 // 2차 소분류 (SubCategory)
 const subsCategory = [
-    { id: 101, main_id: 1, name: "기계·부품 제조" },
-    { id: 102, main_id: 1, name: "전자·전기 기기 제조" },
-    { id: 103, main_id: 1, name: "자동차·운송장비 제조" },
-    { id: 104, main_id: 1, name: "금속·철강·비철금속 가공" },
-    { id: 105, main_id: 1, name: "화학·플라스틱·고무" },
-    { id: 106, main_id: 1, name: "식품·음료 제조" },
-    { id: 107, main_id: 1, name: "건축자재 제조" },
+    { id: 101, main_id: 1, name: "기계·부품 제조", color: "#6482A0" },
+    { id: 102, main_id: 1, name: "전자·전기 기기 제조", color: "#4FB89A" },
+    { id: 103, main_id: 1, name: "자동차·운송장비 제조", color: "#5CAED6" },
+    { id: 104, main_id: 1, name: "금속·철강·비철금속 가공", color: "#888888" },
+    { id: 105, main_id: 1, name: "화학·플라스틱·고무", color: "#9A8ED1" },
+    { id: 106, main_id: 1, name: "식품·음료 제조", color: "#E69A66" },
+    { id: 107, main_id: 1, name: "건축자재 제조", color: "#C8B575" },
 
-    { id: 201, main_id: 2, name: "IT 서비스" },
-    { id: 202, main_id: 2, name: "교육 서비스" },
-    { id: 203, main_id: 2, name: "의료·복지 서비스" },
-    { id: 204, main_id: 2, name: "디자인·컨설팅·전문서비스" },
-    { id: 205, main_id: 2, name: "문화·여가·엔터테인먼트" },
+    { id: 201, main_id: 2, name: "IT 서비스", color: "#5B9ECF" },
+    { id: 202, main_id: 2, name: "교육 서비스", color: "#D4C766" },
+    { id: 203, main_id: 2, name: "의료·복지 서비스", color: "#4EB678" },
+    { id: 204, main_id: 2, name: "디자인·컨설팅·전문서비스", color: "#AA81C1" },
+    { id: 205, main_id: 2, name: "문화·여가·엔터테인먼트", color: "#E9737F" },
 
-    { id: 301, main_id: 3, name: "도매/소매업" },
-    { id: 302, main_id: 3, name: "물류·운송업" },
+    { id: 301, main_id: 3, name: "도매/소매업", color: "#E69A66" },
+    { id: 302, main_id: 3, name: "물류·운송업", color: "#5BAED2" },
 
-    { id: 401, main_id: 4, name: "건설업" },
-    { id: 402, main_id: 4, name: "부동산업" },
+    { id: 401, main_id: 4, name: "건설업", color: "#C7B042" },
+    { id: 402, main_id: 4, name: "부동산업", color: "#84B584" },
 
-    { id: 501, main_id: 5, name: "공공기관" },
-    { id: 502, main_id: 5, name: "사회복지/비영리단체" },
-    { id: 503, main_id: 5, name: "협회/조합/NGO" },
+    { id: 501, main_id: 5, name: "공공기관", color: "#6482A0" },
+    { id: 502, main_id: 5, name: "사회복지/비영리단체", color: "#4FB8B8" },
+    { id: 503, main_id: 5, name: "협회/조합/NGO", color: "#9E7FB0" },
 
-    { id: 601, main_id: 6, name: "에너지 공급" },
-    { id: 602, main_id: 6, name: "수도·하수·폐기물 처리 및 재활용" }
+    { id: 601, main_id: 6, name: "에너지 공급", color: "#D4C766" },
+    { id: 602, main_id: 6, name: "수도·하수·폐기물 처리 및 재활용", color: "#4FB8B8" }
 ];
 
 // 1차 대분류 ↔ KSIC 매핑

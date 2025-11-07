@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <!-- 기본 메타 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="B2Colla | 기업 간 협업을 더 쉽게. 비투콜라에 등록하면 기업이 보인다!">
+  <meta name="author" content="B2Colla Team">
+
+  <!-- 페이지 제목 -->
+  <title>비투콜라</title>
+
+  <!-- 파비콘 -->
+  <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+
+  <!-- 외부 CSS -->
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/foooter.css">
+  <link rel="stylesheet" href="./css/index.css">
+
+  <!-- 폰트 -->
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+
+  <script src="/scripts/sign/loginCheck.js"></script>
+  <script src="https://kit.fontawesome.com/a83ad827ef.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="header header--index">
+    <div class="header__inner">
+      <div class="header__logo">
+        <a href="/"><img src="/assets/logo/logo.png" alt="비투콜라 로고" class="header__logo-image" /></a>
+      </div>
+
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="#about" class="header__nav-link">회사 소개</a></li>
+          <li class="header__nav-item"><a href="#news" class="header__nav-link">소식</a></li>
+          <li class="header__nav-item"><a href="#faq" class="header__nav-link">자주 묻는 질문</a></li>
+          <li class="header__nav-item"><a href="#support" class="header__nav-link">고객센터</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="/page/sign/login.html" class="header__actions-login">로그인</a>
+        <div class="header__actions-lang">
+          <a href="/?lang=ko" class="header__lang-option header__lang-option--active">KOR</a>
+          <a href="/?lang=en" class="header__lang-option">ENG</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="/assets/videos/hero.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero__overlay"></div>
+
+      <canvas class="hero__background"></canvas>
+
+      <div class="hero__orbit">
+        <img src="/assets/icons/favicon.svg" alt="center planet" class="hero__planet" />
+        <div class="hero__orbit-line">
+          <div class="hero__symbol hero__symbol--1"></div>
+          <div class="hero__symbol hero__symbol--2"></div>
+          <div class="hero__symbol hero__symbol--3"></div>
+        </div>
+      </div>
+
+      <div class="hero__content">
+        <h1 class="hero__title">비투콜라에 등록하면 기업이 보인다!</h1>
+        <p class="hero__subtitle">비즈니스 협업을 더 쉽고, 빠르게.</p>
+      </div>
+      <div class="hero__cta">
+        <a href="/page/sign/signup.html" class="btn btn--primary">지금 시작하기</a>
+      </div>
+      <div class="hero__scroll-indicator"></div>
+    </section>
+
+    <section class="partners">
+      <h2 class="partners__title">이런 기업들이 함께하고 있어요</h2>
+      <p class="partners__desc">비투콜라를 통해 협업 중인 파트너 기업 소개 및 장점 강조</p>
+    </section>
+
+    <section class="benefits">
+      <h2 class="benefits__title">B2Colla의 주요 기능</h2>
+
+      <div class="benefit">
+        <h3 class="benefit__title">기업 간 빠른 정보 파악</h3>
+        <p class="benefit__desc">우리 회사를 소개하고, 다른 기업 정보를 한눈에 파악하세요.</p>
+      </div>
+
+      <div class="benefit">
+        <h3 class="benefit__title">간편한 협업 매칭</h3>
+        <p class="benefit__desc">필요한 협업 요청을 올리고, 업종별 파트너를 빠르게 찾아보세요.</p>
+      </div>
+
+      <div class="benefit">
+        <h3 class="benefit__title">정부 지원사업 다이렉팅</h3>
+        <p class="benefit__desc">정부 사업 정보를 빠르게 확인하고, 기업 간 직접 연결이 가능합니다.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2 class="cta__title">비즈니스 네트워크를 하나로 연결하다</h2>
+      <p class="cta__desc">비투콜라와 함께, 스마트한 파트너십을 만들어나가세요.</p>
+      <a href="/page/sign/signup.html" class="btn btn--primary">지금 시작하기</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <section class="footer__info">
+        <h2 class="footer__company">비투콜라</h2>
+        <address class="footer__address">
+          경남 창원시 마산회원구 내서읍 광려천남로 59<br />
+          경남로봇랜드재단 618호
+        </address>
+      </section>
+
+      <section class="footer__contact">
+        <p>TEL <a href="tel:055-224-6633">055-224-6633~5</a></p>
+        <p>FAX 070-4275-5487</p>
+      </section>
+
+      <nav class="footer__nav">
+        <ul class="footer__links">
+          <li><a href="/terms">이용약관</a></li>
+          <li><a href="/privacy">개인정보 처리방침</a></li>
+          <li><a href="/support">고객센터</a></li>
+        </ul>
+      </nav>
+      <div class="footer__bottom">
+        <small class="footer__copyright">
+          © 2025 B2Colla. All rights reserved.
+        </small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./scripts/index/heroParticles.js"></script>
+  <script>
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector(".header");
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      if (scrollY > viewportHeight) {
+        header.classList.remove("header--index");
+      } else {
+        header.classList.add("header--index");
+      }
+    });
+  </script>
+</body>
+
+</html>

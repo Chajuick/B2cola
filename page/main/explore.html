@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <!-- 기본 메타 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="B2Colla | 기업 간 협업을 더 쉽게. 비투콜라에 등록하면 기업이 보인다!">
+  <meta name="author" content="B2Colla Team">
+
+  <!-- 페이지 제목 -->
+  <title>비투콜라</title>
+
+  <!-- 파비콘 -->
+  <link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+
+  <!-- 외부 CSS -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/foooter.css">
+  <link rel="stylesheet" href="/css/explore.css">
+
+  <!-- 폰트 -->
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+
+  <script src="/scripts/sign/loginCheck.js"></script>
+  <script src="https://kit.fontawesome.com/a83ad827ef.js" crossorigin="anonymous"></script>
+
+  <script src="/scripts/page/loginCheck.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <a href="/"><img src="/assets/logo/logo.png" alt="비투콜라 로고" class="header__logo-image" /></a>
+      </div>
+
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="#about" class="header__nav-link">회사 소개</a></li>
+          <li class="header__nav-item"><a href="#news" class="header__nav-link">소식</a></li>
+          <li class="header__nav-item"><a href="#faq" class="header__nav-link">자주 묻는 질문</a></li>
+          <li class="header__nav-item"><a href="#support" class="header__nav-link">고객센터</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="/page/sign/login.html" class="header__actions-login">로그인</a>
+        <div class="header__actions-lang">
+          <a href="/?lang=ko" class="header__lang-option header__lang-option--active">KOR</a>
+          <a href="/?lang=en" class="header__lang-option">ENG</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- 검색창 -->
+    <section class="main__search">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" class="main__search-input" placeholder="기업명, 업종, 키워드 등을 입력해주세요!" />
+        <button class="search-btn">검색</button>
+      </div>
+
+      <div class="search-suggestions">
+        <span>#제조업</span>
+        <span>#IT서비스</span>
+        <span>#건설</span>
+        <span>#에너지</span>
+        <span>#디자인</span>
+      </div>
+    </section>
+
+    <!-- 카테고리 선택 -->
+    <section class="main__category">
+      <div class="category-block">
+        <div class="main__category-main" id="mainCategoryList"></div>
+      </div>
+
+      <div class="category-block">
+        <div class="main__category-sub" id="subCategoryList"></div>
+      </div>
+    </section>
+
+    <!-- 회사 목록 -->
+    <section class="main__company-list"></section>
+  </main>
+
+  <script src="/temp-data/category-data.js"></script>
+  <script src="/temp-data/company-data.js"></script>
+  <script src="/scripts/page/explore.js"></script>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <section class="footer__info">
+        <h2 class="footer__company">비투콜라</h2>
+        <address class="footer__address">
+          경남 창원시 마산회원구 내서읍 광려천남로 59<br />
+          경남로봇랜드재단 618호
+        </address>
+      </section>
+
+      <section class="footer__contact">
+        <p>TEL <a href="tel:055-224-6633">055-224-6633~5</a></p>
+        <p>FAX 070-4275-5487</p>
+      </section>
+
+      <nav class="footer__nav">
+        <ul class="footer__links">
+          <li><a href="/terms">이용약관</a></li>
+          <li><a href="/privacy">개인정보 처리방침</a></li>
+          <li><a href="/support">고객센터</a></li>
+        </ul>
+      </nav>
+      <div class="footer__bottom">
+        <small class="footer__copyright">
+          © 2025 B2Colla. All rights reserved.
+        </small>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

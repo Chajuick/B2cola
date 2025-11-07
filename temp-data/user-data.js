@@ -1,5 +1,6 @@
 const user = {
     username: "focuswin",
+    email: "focuswin@focuswin.com",
     password: "1234",
     companyName: "(주) 포커스윈",
     ceoName: "박희찬",

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- 기본 메타 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="B2Colla | 기업 간 협업을 더 쉽게. 비투콜라에 등록하면 기업이 보인다!">
+    <meta name="author" content="B2Colla Team">
+
+    <!-- 페이지 제목 -->
+    <title>비투콜라</title>
+
+    <!-- 파비콘 -->
+    <link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+
+    <!-- 외부 CSS -->
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/foooter.css">
+    <link rel="stylesheet" href="/css/detaila.css">
+
+    <!-- 폰트 -->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+
+    <script src="/scripts/sign/loginCheck.js"></script>
+    <script src="https://kit.fontawesome.com/a83ad827ef.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="/"><img src="/assets/logo/logo.png" alt="비투콜라 로고" class="header__logo-image" /></a>
+            </div>
+
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="#about" class="header__nav-link">회사 소개</a></li>
+                    <li class="header__nav-item"><a href="#news" class="header__nav-link">소식</a></li>
+                    <li class="header__nav-item"><a href="#faq" class="header__nav-link">자주 묻는 질문</a></li>
+                    <li class="header__nav-item"><a href="#support" class="header__nav-link">고객센터</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a href="/page/sign/login.html" class="header__actions-login">로그인</a>
+                <div class="header__actions-lang">
+                    <a href="/?lang=ko" class="header__lang-option header__lang-option--active">KOR</a>
+                    <a href="/?lang=en" class="header__lang-option">ENG</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="company-detail">
+        <!-- ✅ 상단 기업 정보 -->
+        <div class="company-detail__header">
+            <img src="" alt="기업 로고" class="company-detail__image" />
+            <div class="company-detail__info">
+                <h1 class="company-detail__name">주식회사 셈즈</h1>
+                <p class="company-detail__desc">
+                    상수도 관로 세척 기술을 보유한 환경 전문 기업입니다.
+                </p>
+                <p class="company-detail__meta">
+                    <i class="fa-solid fa-location-dot company-detail__meta-icon"></i> 인천
+                    <i class="fa-solid fa-industry company-detail__meta-icon"></i> 도매/소매업
+                </p>
+
+                <div class="company-detail__actions">
+                    <button class="company-detail__btn company-detail__btn--like">
+                        <i class="fa-regular fa-heart"></i> 관심기업
+                    </button>
+                    <button class="company-detail__btn company-detail__btn--collab">
+                        <i class="fa-solid fa-handshake"></i> 협업 제안
+                    </button>
+                    <a href="#" target="_blank" class="company-detail__btn company-detail__btn--link">
+                        <i class="fa-solid fa-globe"></i> 공식 홈페이지
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ✅ 기본 정보 -->
+        <div class="company-detail__section">
+            <h2 class="company-detail__title">기업 기본 정보</h2>
+            <div class="company-detail__grid">
+                <p><i class="fa-solid fa-calendar-days"></i> 설립일: 2010-04-12</p>
+                <p><i class="fa-solid fa-users"></i> 직원 수: 45명</p>
+                <p><i class="fa-solid fa-coins"></i> 매출 규모: 50억 원</p>
+                <p><i class="fa-solid fa-building"></i> 본사 위치: 경기도 시흥시</p>
+            </div>
+        </div>
+
+        <!-- ✅ 협업 통계 -->
+        <div class="company-detail__section">
+            <h2 class="company-detail__title">협업 현황</h2>
+            <div class="company-detail__stats">
+                <div class="company-detail__stat">
+                    <span class="company-detail__stat-value">38</span>
+                    <span class="company-detail__stat-label">총 협업 건수</span>
+                </div>
+                <div class="company-detail__stat">
+                    <span class="company-detail__stat-value">92%</span>
+                    <span class="company-detail__stat-label">협업 성공률</span>
+                </div>
+                <div class="company-detail__stat">
+                    <span class="company-detail__stat-value">4.7</span>
+                    <span class="company-detail__stat-label">평균 평점</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ✅ 협업 리뷰 섹션 -->
+        <div class="company-detail__section company-review">
+            <h2 class="company-detail__title">협업 리뷰</h2>
+
+            <!-- 총 평점 -->
+            <div class="company-review__summary">
+                <p class="company-review__average">
+                    <i class="fa-solid fa-star" style="color: var(--accent-primary);"></i> 총 평점:
+                    <strong>4.5 / 5.0</strong>
+                </p>
+                <p class="company-review__count">총 12건의 협업 리뷰</p>
+            </div>
+
+            <!-- 블라인드 처리된 리뷰 영역 -->
+            <div class="company-review__locked" id="reviewLocked">
+                <p><i class="fa-solid fa-lock"></i> 리뷰 열람은 기업 정보 등록 후 가능합니다.</p>
+                <button class="company-review__unlock-btn" id="unlockReviewsBtn">
+                    <i class="fa-solid fa-user-plus"></i> 내 정보 등록하기
+                </button>
+            </div>
+
+            <!-- 실제 리뷰 (기본 숨김 상태) -->
+            <div class="company-review__list" id="reviewList" style="display: none;">
+                <div class="company-review__item">
+                    <div class="company-review__item-top">
+                        <p class="company-review__author">
+                            <i class="fa-solid fa-comment-dots"></i> 하이드로텍
+                        </p>
+                        <div class="company-review__stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="company-review__text">
+                        신속하고 정확한 협업이었습니다. 일정 관리가 탁월했습니다!
+                    </p>
+                </div>
+
+                <div class="company-review__item">
+                    <div class="company-review__item-top">
+                        <p class="company-review__author">
+                            <i class="fa-solid fa-comment-dots"></i> 블루웨이브
+                        </p>
+                        <div class="company-review__stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="company-review__text">
+                        전반적으로 만족스러웠습니다. 개선 제안도 적극적으로 수용해 주셨어요.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ✅ 비슷한 기업 추천 -->
+        <div class="company-detail__section">
+            <h2 class="company-detail__title">비슷한 기업</h2>
+            <div class="company-detail__related">
+                <div class="company-detail__related-card">
+                    <img src="" alt="EcoPure" />
+                    <p class="company-detail__related-name">EcoPure</p>
+                    <p class="company-detail__related-field">수처리</p>
+                </div>
+                <div class="company-detail__related-card">
+                    <img src="" alt="HydroTech" />
+                    <p class="company-detail__related-name">HydroTech</p>
+                    <p class="company-detail__related-field">상하수도</p>
+                </div>
+                <div class="company-detail__related-card">
+                    <img src="" alt="BlueWave" />
+                    <p class="company-detail__related-name">BlueWave</p>
+                    <p class="company-detail__related-field">환경센서</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <section class="footer__info">
+                <h2 class="footer__company">비투콜라</h2>
+                <address class="footer__address">
+                    경남 창원시 마산회원구 내서읍 광려천남로 59<br />
+                    경남로봇랜드재단 618호
+                </address>
+            </section>
+
+            <section class="footer__contact">
+                <p>TEL <a href="tel:055-224-6633">055-224-6633~5</a></p>
+                <p>FAX 070-4275-5487</p>
+            </section>
+
+            <nav class="footer__nav">
+                <ul class="footer__links">
+                    <li><a href="/terms">이용약관</a></li>
+                    <li><a href="/privacy">개인정보 처리방침</a></li>
+                    <li><a href="/support">고객센터</a></li>
+                </ul>
+            </nav>
+            <div class="footer__bottom">
+                <small class="footer__copyright">
+                    © 2025 B2Colla. All rights reserved.
+                </small>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

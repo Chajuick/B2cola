@@ -1,0 +1,230 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 74px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    background-color: var(--white-90);
+    z-index: 199;
+    display: flex;
+    align-items: center;
+    transition: all .4s;
+}
+
+.header--index {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.14);
+}
+
+.header--index .header__actions-user {
+    color: var(--white-90);
+}
+
+.header--index .header__actions-user:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.header--index:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.header--index .header__nav-item {
+    color: var(--white-90);
+}
+
+.header--index .header__nav-item:hover {
+    background: none;
+}
+
+.header--index .header__actions-login:hover {
+    background-color: var(--black-90);
+    color: var(--accent-primary);
+}
+
+.header--index .header__lang-option {
+    color: var(--white-20);
+}
+
+.header--index .header__lang-option--active {
+    color: var(--white-100);
+}
+
+.header--index .header__user-dropdown {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.header--index .header__user-dropdown a:last-child {
+    border-top: none;
+    padding: 12px 0;
+}
+
+.header__inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo-image {
+    height: 32px;
+}
+
+.header__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__nav-item {
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all .4s;
+    font-weight: 400;
+}
+
+.header__nav-item:hover {
+    color: var(--accent-primary-dark);
+    background-color: var(--white-60);
+}
+
+.header__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.header__actions-login {
+    color: var(--white-90);
+    background-color: var(--black-90);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all .4s;
+}
+
+.header__actions-login:hover {
+    background-color: var(--black-40);
+}
+
+.header__actions-lang {
+    margin-left: 22px;
+}
+
+.header__lang-option:last-child {
+    margin-left: 8px;
+}
+
+.header__lang-option {
+    font-weight: 400;
+    color: var(--black-40);
+    transition: all .4s;
+}
+
+.header__lang-option--active {
+    font-weight: 800;
+    color: var(--black-60);
+}
+
+.header__lang-option:hover {
+    filter: opacity(.6);
+}
+
+.header__actions-user {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__actions-user:hover {
+    background-color: var(--white-60);
+}
+
+.header__actions-user:hover .header__user-dropdown {
+    opacity: 1;
+    visibility: visible;
+}
+
+.user-name {
+    font-weight: 600;
+}
+
+.header__user-dropdown {
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 112px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+    background-color: var(--white-100);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding-top: 6px;
+}
+
+.header__user-dropdown a {
+    width: 100%;
+    padding: 6px 0;
+    text-align: center;
+    font-size: var(--font-size-small);
+    position: relative;
+}
+
+.header__user-dropdown a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.header__user-dropdown a:last-child {
+    border-top: 1px solid var(--white-50);
+    padding: 12px 0;
+}
+
+.header__user-info {
+    position: relative;
+}
+
+.notification-badge,
+.notif-count {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-error);
+    color: var(--white-90);
+    border-radius: 50%;
+    font-size: var(--font-size-tiny);
+}
+
+.notification-badge {
+    top: -12px;
+    left: 12px;
+}
+
+.notif-count {
+    top: 4px;
+    left: 88px;
+}
