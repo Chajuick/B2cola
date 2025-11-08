@@ -45,18 +45,19 @@ function renderCompanies(filteredCompanies) {
 
     filteredCompanies.forEach(c => {
         // 이미지 처리
-        const imageSrc = c.image
-            ? `./assets/images/${c.image}`
-            : './assets/images/default-company.png';
+        const hasImage = !!c.image;
+        const imageSrc = hasImage
+            ? `/assets/logo/logo-${c.image}`
+            : null;
 
         // 링크 처리
         const linkHTML = c.website
             ? `<a href="${c.website}" class="company-card__link" target="_blank">
-          <i class="fa-solid fa-link"></i> 웹사이트
-        </a>`
+            <i class="fa-solid fa-link"></i> 웹사이트
+          </a>`
             : `<button class="company-card__link company-card__link--disabled" disabled>
-          <i class="fa-solid fa-link-slash"></i> 웹사이트 없음
-        </button>`;
+            <i class="fa-solid fa-link-slash"></i> 웹사이트 없음
+          </button>`;
 
         // 해당 회사의 소속 소분류명 찾기
         const mapping = companySubMapping.find(m => m.company_id === c.id);
@@ -64,31 +65,55 @@ function renderCompanies(filteredCompanies) {
         const subName = sub ? sub.name : '카테고리 미등록';
         const subColor = sub ? sub.color : '#95a5a6';
 
+        // 이미지 or 텍스트 렌더링
+        const imageHTML = hasImage
+            ? `<img src="${imageSrc}"
+                 onerror="this.onerror=null; this.src='./assets/images/default-company.png';"
+                 alt="${c.name}"
+                 class="company-card__image" />`
+            : `<div class="company-card__no-image">${c.name}</div>`;
+
+        function lightenColor(color, percent) {
+            const num = parseInt(color.replace("#", ""), 16),
+                amt = Math.round(2.55 * percent),
+                R = (num >> 16) + amt,
+                G = (num >> 8 & 0x00FF) + amt,
+                B = (num & 0x0000FF) + amt;
+            return "#" + (
+                0x1000000 +
+                (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+                (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+                (B < 255 ? B < 1 ? 0 : B : 255)
+            ).toString(16).slice(1);
+        }
+
+        const gradient = `linear-gradient(135deg, ${subColor} 0%, ${lightenColor(subColor, 15)} 100%)`;
+
         // 카드 구성
         const card = document.createElement('div');
         card.className = 'company-card';
         card.innerHTML = `
-        <div class="company-card__image-wrapper">
-            <img src="${imageSrc}" 
-                onerror="this.onerror=null; this.src='./assets/images/default-company.png';" 
-                alt="${c.name}" 
-                class="company-card__image" />
-            <button class="company-card__like">
-            <i class="fa-regular fa-heart"></i>
-            </button>
-        </div>
-
-        <div class="company-card__info">
-            <h3 class="company-card__name">${c.name}</h3>
-            <p class="company-card__category" style="background-color: ${subColor}">${subName}</p>
-            <div class="company-card__buttons">
-            ${linkHTML}
-            <a href="/page/board/detail.html" class="company-card__detail">
-            <i class="fa-solid fa-circle-info"></i> 상세보기
-            </a>
+            <div class="company-card__image-wrapper" style="background: ${gradient}">   
+                <div class="company-card__ci-box">
+                    ${imageHTML}
+                </div>
+                <button class="company-card__like">
+                <i class="fa-regular fa-heart"></i>
+                </button>
             </div>
-        </div>
-    `;
+
+            <div class="company-card__info">
+                <h3 class="company-card__name">${c.name}</h3>
+                <p class="company-card__subs">${c.detail}</p>
+                <p class="company-card__category" style="background-color: ${subColor}">${subName}</p>                     
+                <div class="company-card__buttons">
+                    <a href="/page/board/detail.html" class="company-card__detail">
+                        <i class="fa-solid fa-circle-info"></i> 상세보기
+                    </a>           
+                    ${linkHTML}
+                </div>
+            </div>
+        `;
         companyListContainer.appendChild(card);
     });
 }

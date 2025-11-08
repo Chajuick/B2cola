@@ -50,7 +50,7 @@
 
 .company-detail__meta-icon {
     margin-right: 6px;
-    color: var(--accent-primary);
+    color: #3182f6;
 }
 
 .company-detail__meta-icon:last-child {
@@ -82,8 +82,8 @@
 
 .company-detail__btn:hover {
     background: #f2f6ff;
-    border-color: var(--accent-primary);
-    color: var(--accent-primary);
+    border-color: #3182f6;
+    color: #3182f6;
 }
 
 .company-detail__btn--like i {
@@ -91,7 +91,7 @@
 }
 
 .company-detail__btn--collab i {
-    color: var(--accent-primary);
+    color: #3182f6;
 }
 
 .company-detail__btn--link i {
@@ -140,7 +140,7 @@
 .company-detail__stat-value {
     font-size: var(--font-size-h3);
     font-weight: 900;
-    color: var(--accent-primary);
+    color: #3182f6;
     display: block;
 }
 
@@ -184,7 +184,7 @@
 
 .company-review__unlock-btn {
     margin-top: 12px;
-    background-color: var(--accent-primary);
+    background-color: #3182f6;
     color: var(--white-100);
     border: none;
     border-radius: 6px;
@@ -195,7 +195,7 @@
 }
 
 .company-review__unlock-btn:hover {
-    background-color: var(--accent-primary-dark);
+    background-color: #225193;
     transform: translateY(-2px);
 }
 

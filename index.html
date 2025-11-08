@@ -55,8 +55,8 @@
 
   <main class="main">
     <section class="hero">
-      <video class="hero__video" autoplay muted loop playsinline>
-        <source src="/assets/videos/hero.mp4" type="video/mp4" />
+      <video class="hero__video" autoplay muted loop playsinline preload="auto">
+        <source src="/assets/videos/hero.mp4" type="video/mp4">
       </video>
 
       <div class="hero__overlay"></div>
@@ -82,33 +82,122 @@
       <div class="hero__scroll-indicator"></div>
     </section>
 
-    <section class="partners">
-      <h2 class="partners__title">이런 기업들이 함께하고 있어요</h2>
-      <p class="partners__desc">비투콜라를 통해 협업 중인 파트너 기업 소개 및 장점 강조</p>
+    <section class="benefits">
+      <div class="benefit">
+        <h3 class="benefit__title">홍보</h3>
+        <p class="benefit__sub-title">
+          우리 회사의 강점을 알리고,<br />
+          다양한 기업과의 노출 기회를 넓히세요.
+        </p>
+        <div class="benefit__img-wrapper">
+          <img class="benefit__img--pc" src="/assets/image/index/cta-pc.png" alt />
+          <img class="benefit__img--phone" src="/assets/image/index/cta-phone.png" alt />
+        </div>
+        <p class="benefit__desc">
+          비투콜라에 등록하면<br />
+          홈페이지, 제품, 서비스까지<br />
+          쉽게 우리 회사를 알릴 수 있어요.
+        </p>
+      </div>
+
+      <div class="benefit reverse">
+        <h3 class="benefit__title">협업</h3>
+        <p class="benefit__sub-title">
+          간편하고 빠르게<br />
+          필요한 파트너와 협업을 시작하세요.
+        </p>
+        <div class="benefit__img-wrapper">
+          <img class="benefit__img--pc" src="/assets/image/index/cta-pc.png" alt />
+          <img class="benefit__img--phone" src="/assets/image/index/cta-phone.png" alt />
+        </div>
+        <p class="benefit__desc">
+          업종부터, 규모, 거리까지<br />
+          우리 회사가 원하는<br />
+          신뢰할 수 있는 파트너를 찾을 수 있어요.<br />
+        </p>
+      </div>
+
+      <div class="benefit">
+        <h3 class="benefit__title">지원 사업</h3>
+        <p class="benefit__sub-title">
+          정부 및 기관 지원사업<br />
+          바로 확인하고 참여하세요.
+        </p>
+        <div class="benefit__img-wrapper">
+          <img class="benefit__img--pc" src="/assets/image/index/cta-pc.png" alt />
+          <img class="benefit__img--phone" src="/assets/image/index/cta-phone.png" alt />
+        </div>
+        <p class="benefit__desc">
+          놓칠 수 있는 지원사업,<br />
+          관심 분야를 설정하고<br />
+          놓치지 말고 알림을 받아보세요.
+        </p>
+      </div>
     </section>
 
-    <section class="benefits">
-      <h2 class="benefits__title">B2Colla의 주요 기능</h2>
+    <section class="partners">
+      <h2 class="partners__count">
+        <span class="partners__count--number" data-target="35200">0</span>개 이상의 기업 데이터
+      </h2>
+      <h2 class="partners__title">믿을 수 있는 파트너, 비투콜라</h2>
+      <p class="partners__desc">
+        비투콜라는 공공 및 국가정보 기반의 기업 데이터를 활용하여<br />
+        다양한 산업의 협업과 네트워킹을 지원합니다.<br />
+        방대한 데이터로 새로운 비즈니스 가능성을 탐색해보세요.
+      </p>
 
-      <div class="benefit">
-        <h3 class="benefit__title">기업 간 빠른 정보 파악</h3>
-        <p class="benefit__desc">우리 회사를 소개하고, 다른 기업 정보를 한눈에 파악하세요.</p>
-      </div>
-
-      <div class="benefit">
-        <h3 class="benefit__title">간편한 협업 매칭</h3>
-        <p class="benefit__desc">필요한 협업 요청을 올리고, 업종별 파트너를 빠르게 찾아보세요.</p>
-      </div>
-
-      <div class="benefit">
-        <h3 class="benefit__title">정부 지원사업 다이렉팅</h3>
-        <p class="benefit__desc">정부 사업 정보를 빠르게 확인하고, 기업 간 직접 연결이 가능합니다.</p>
+      <div class="partners__marquee">
+        <div class="marquee-row">
+          <img src="/assets/logo/logo.png" alt="회사1">
+          <img src="/assets/logo/logo.png" alt="회사2">
+          <img src="/assets/logo/logo.png" alt="회사3">
+          <img src="/assets/logo/logo.png" alt="회사4">
+          <img src="/assets/logo/logo.png" alt="회사5">
+          <img src="/assets/logo/logo.png" alt="회사6">
+          <img src="/assets/logo/logo.png" alt="회사7">
+          <img src="/assets/logo/logo.png" alt="회사8">
+          <img src="/assets/logo/logo.png" alt="회사9">
+          <img src="/assets/logo/logo.png" alt="회사10">
+        </div>
+        <div class="marquee-row reverse">
+          <img src="/assets/logo/logo.png" alt="회사1">
+          <img src="/assets/logo/logo.png" alt="회사2">
+          <img src="/assets/logo/logo.png" alt="회사3">
+          <img src="/assets/logo/logo.png" alt="회사4">
+          <img src="/assets/logo/logo.png" alt="회사5">
+          <img src="/assets/logo/logo.png" alt="회사6">
+          <img src="/assets/logo/logo.png" alt="회사7">
+          <img src="/assets/logo/logo.png" alt="회사8">
+          <img src="/assets/logo/logo.png" alt="회사9">
+          <img src="/assets/logo/logo.png" alt="회사10">
+        </div>
       </div>
     </section>
 
     <section class="cta">
-      <h2 class="cta__title">비즈니스 네트워크를 하나로 연결하다</h2>
-      <p class="cta__desc">비투콜라와 함께, 스마트한 파트너십을 만들어나가세요.</p>
+      <div class="cta__images">
+        <!-- PC 이미지 (중앙 등장) -->
+        <div class="cta__image-box cta__image-box--center">
+          <img src="/assets/image/index/cta-pc-multi.png" alt="PC" class="cta__image" />
+          <p class="cta__image-text">
+            <strong>비즈니스는 비투콜라로 연결된다</strong><br>
+            대시보드 기반 데이터와 협업 도구로 비즈니스 인사이트를 즉시 확인하세요.
+          </p>
+        </div>
+
+        <!-- 휴대폰 이미지 (좌측 슬라이드 인) -->
+        <div class="cta__image-box cta__image-box--left">
+          <img src="/assets/image/index/cta-phone-multi.png" alt="휴대폰" class="cta__image" />
+          <p class="cta__image-text">
+            <strong>업무는 언제 어디서나, 비투콜라와 함께</strong><br>
+            모바일로 즉시 소통하고 중요한 알림을 놓치지 마세요.
+          </p>
+        </div>
+      </div>
+
+      <!-- 공통 CTA 텍스트 -->
+      <h2 class="cta__title" id="animated-title">비즈니스&nbsp;네트워크를&nbsp;하나로&nbsp;연결하다</h2>
+      <p class="cta__desc">비투콜라와 함께, 스마트한 파트너십을 만들어보세요.</p>
       <a href="/page/sign/signup.html" class="btn btn--primary">지금 시작하기</a>
     </section>
   </main>
@@ -156,6 +245,107 @@
         header.classList.add("header--index");
       }
     });
+
+    const imageBoxes = document.querySelectorAll(".cta__image-box");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.4 });
+
+    imageBoxes.forEach(box => observer.observe(box));
+
+
+    const title = document.getElementById("animated-title");
+    const text = title.textContent;
+    title.textContent = "";
+
+    // 글자별 <span> 생성
+    text.split("").forEach((char) => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      title.appendChild(span);
+    });
+
+    // IntersectionObserver 설정
+    const titleObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const spans = entry.target.querySelectorAll("span");
+          spans.forEach((span, i) => {
+            span.style.animation = `fadeInSparkle 0.6s forwards`;
+            span.style.animationDelay = `${i * 0.05}s`;
+          });
+        } else {
+          // 화면에서 벗어나면 초기 상태로 되돌리기
+          const spans = entry.target.querySelectorAll("span");
+          spans.forEach(span => {
+            span.style.animation = "none";
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+
+    titleObserver.observe(title);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const counter = document.querySelector(".partners__count--number");
+      const target = +counter.dataset.target;
+      let started = false;
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !started) {
+            started = true;
+            let count = 0;
+            const speed = 3; // 속도 조절 (1 = 빠름, 5 = 느림)
+            const interval = setInterval(() => {
+              count += Math.ceil(target / 100);
+              if (count >= target) {
+                count = target;
+                clearInterval(interval);
+                counter.classList.add("animate");
+                setTimeout(() => counter.classList.remove("animate"), 400);
+              }
+              counter.textContent = count.toLocaleString();
+            }, speed * 10);
+          }
+        });
+      });
+
+      observer.observe(counter);
+    });
+
+    // 모든 .benefit 요소 선택
+    const benefits = document.querySelectorAll('.benefit');
+
+    // Intersection Observer 옵션
+    const options = {
+      root: null, // viewport 기준
+      rootMargin: '0px',
+      threshold: 0.5 // 화면에 50% 이상 보여야 활성화
+    };
+
+    // 콜백 함수
+    const callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active'); // 보이면 active 추가
+        } else {
+          entry.target.classList.remove('active'); // 화면 밖이면 제거
+        }
+      });
+    };
+
+    // Observer 생성
+    const benefitsObserver = new IntersectionObserver(callback, options);
+
+    // 각 benefit에 observer 적용
+    benefits.forEach(benefit => benefitsObserver.observe(benefit));
+
   </script>
 </body>
 
