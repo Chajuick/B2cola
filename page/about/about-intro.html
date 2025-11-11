@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <!-- 기본 메타 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="B2Colla | 기업 간 협업을 더 쉽게. 비투콜라에 등록하면 기업이 보인다!">
+  <meta name="author" content="B2Colla Team">
+
+  <!-- 페이지 제목 -->
+  <title>비투콜라</title>
+
+  <!-- 파비콘 -->
+  <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+
+  <!-- 외부 CSS -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/public.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/foooter.css">
+  <link rel="stylesheet" href="/css/about.css">
+
+  <!-- 폰트 -->
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+
+  <script src="/scripts/sign/loginCheck.js"></script>
+  <script src="https://kit.fontawesome.com/a83ad827ef.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <a href="/"><img src="/assets/image/ci/b2colla.png" alt="비투콜라 로고" class="header__logo-image" /></a>
+      </div>
+
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="about-intro.html" class="header__nav-link">서비스 소개</a>
+            <ul class="header__nav-sub-list active">
+              <li><a href="about-intro.html" class="header__nav-sub-link">비투콜라 소개</a></li>
+              <li><a href="about-guide.html" class="header__nav-sub-link">이용 가이드</a></li>
+              <li><a href="about-partnership.html" class="header__nav-sub-link">제휴/문의</a></li>
+            </ul>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="matching-find.html" class="header__nav-link">파트너 매칭</a>
+            <ul class="header__nav-sub-list">
+              <li><a href="matching-find.html" class="header__nav-sub-link">통합검색</a></li>
+              <li><a href="matching-request.html" class="header__nav-sub-link">협업 요청하기</a></li>
+              <li><a href="matching-propose.html" class="header__nav-sub-link">협업 제안하기</a></li>
+            </ul>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="support-gov.html" class="header__nav-link">지원사업</a>
+            <ul class="header__nav-sub-list">
+              <li><a href="support-gov.html" class="header__nav-sub-link">통합검색</a></li>
+              <li><a href="support-tech.html" class="header__nav-sub-link">기술개발</a></li>
+              <li><a href="support-fund.html" class="header__nav-sub-link">자금/금융</a></li>
+              <li><a href="support-hr.html" class="header__nav-sub-link">인력/교육</a></li>
+            </ul>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="news-notice.html" class="header__nav-link">소식</a>
+            <ul class="header__nav-sub-list">
+              <li><a href="news-notice.html" class="header__nav-sub-link">공지사항</a></li>
+              <li><a href="news-press.html" class="header__nav-sub-link">보도자료</a></li>
+            </ul>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="support-faq.html" class="header__nav-link">고객센터</a>
+            <ul class="header__nav-sub-list">
+              <li><a href="support-faq.html" class="header__nav-sub-link">FAQ</a></li>
+              <li><a href="support-contact.html" class="header__nav-sub-link">1:1 문의</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="/page/sign/login.html" class="header__actions-login">로그인</a>
+        <div class="header__actions-lang">
+          <a href="/?lang=ko" class="header__lang-option header__lang-option--active">KOR</a>
+          <a href="/?lang=en" class="header__lang-option">ENG</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="intro">
+      <div class="intro__bg main__header-bg">
+        <h1 class="main__bg-title">비투콜라 소개</h1>
+      </div>
+      <div class="main__container">
+        <h1 class="main__title">B2COLLA</h1>
+        <p class="main__subtitle">Business To Collaboration, 협업경제의 시작</p>
+
+        <div class="main__content">
+          <p class="main__text">
+            비투콜라(B2COLLA)는 “Business To Collaboration”의 의미를 가진 플랫폼으로,<br />
+            사업적 거래에서 협업적 거래로의 전환을 통해 우리나라의 협업경제를 만들어가고자 합니다.
+          </p>
+
+          <p class="main__text">
+            함께할 때 더 큰 가능성이 열립니다.<br />
+            B2COLLA는 사업자 간 협업의 기회를 만들고, 아이디어를 공유하는 온라인 공간을 제공합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vision">
+      <div class="vision__bg"></div>
+
+      <canvas class="vision__particle"></canvas>
+
+      <div class="rocket__wrapper">
+        <img src="/assets/image/about/rocket.png" alt="rocket" class="rocket" />
+      </div>
+
+      <div class="vision__orbit">
+        <img src="/assets/icons/favicon.svg" alt="center planet" class="vision__planet" />
+        <h2 class="vision__planet-title">B2COLLA</h2>
+        <div class="vision__orbit-line">
+          <div class="vision__symbol vision__symbol--1"></div>
+          <div class="vision__symbol vision__symbol--2"></div>
+          <div class="vision__symbol vision__symbol--3"></div>
+        </div>
+      </div>
+
+      <div class="vision__container">
+        <ul class="vision__list">
+          <li class="vision__item visible">
+            <h3 class="vision__title">VISION</h3>
+            <p class="vision__desc">협업을 통해 대한민국의 <br />새로운 협업경제 창조</p>
+          </li>
+          <li class="vision__item visible">
+            <h3 class="vision__title">MISSION</h3>
+            <p class="vision__desc">정보와 신뢰를 통한 <br />상생 네트워크 구축</p>
+          </li>
+          <li class="vision__item visible">
+            <h3 class="vision__title">VALUE</h3>
+            <p class="vision__desc">신뢰를 바탕으로 <br />투명성과 상생의 정신으로 성장</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="features__container">
+        <h2 class="features__title">핵심 기능</h2>
+        <ul class="features__list">
+          <li class="features__item">
+            <h3 class="features__item-title">기업 검색 및 홍보</h3>
+            <p class="features__item-desc">
+              기업정보를 등록하면 종목, 상품, 지역별로 검색이 가능하며,
+              홈페이지가 없어도 Sub Domain 형태로 홍보할 수 있습니다.
+            </p>
+          </li>
+
+          <li class="features__item">
+            <h3 class="features__item-title">협업게시판</h3>
+            <p class="features__item-desc">
+              기업 간 협업 아이디어, 공지사항, 프로젝트 정보를 자유롭게 공유할 수 있습니다.
+            </p>
+          </li>
+
+          <li class="features__item">
+            <h3 class="features__item-title">스토리라인 서비스</h3>
+            <p class="features__item-desc">
+              회원사는 자체 스토리라인을 등록하여 자사 소식, 이슈, 광고를 관리할 수 있습니다.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="future">
+      <div class="future__container">
+        <h2 class="future__title">앞으로의 계획</h2>
+        <p class="future__text">
+          B2COLLA는 팩스/메일 서비스, Needs Matching 서비스, 기업 StoryTelling 서비스,
+          커뮤니티 서비스 등 다양한 기능을 단계적으로 확장해 나갈 예정입니다.
+        </p>
+      </div>
+    </section>
+
+    <section class="join">
+      <div class="join__container">
+        <h2 class="join__title">함께 만들어가는 협업경제</h2>
+        <p class="join__text">
+          비투콜라는 포커스윈에서 시작했지만, 모든 기업이 참여해 함께 발전하는 플랫폼이 되고자 합니다.
+          여러분의 조언과 아이디어로 함께 만들어가는 “Win-Win 협업경제”에 동참해 주세요.
+        </p>
+        <a href="/join.html" class="join__button">회원으로 참여하기</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <section class="footer__info">
+        <h2 class="footer__company">비투콜라</h2>
+        <address class="footer__address">
+          경남 창원시 마산회원구 내서읍 광려천남로 59<br />
+          경남로봇랜드재단 618호
+        </address>
+      </section>
+
+      <section class="footer__contact">
+        <p>TEL <a href="tel:055-224-6633">055-224-6633~5</a></p>
+        <p>FAX 070-4275-5487</p>
+      </section>
+
+      <nav class="footer__nav">
+        <ul class="footer__links">
+          <li><a href="/terms">이용약관</a></li>
+          <li><a href="/privacy">개인정보 처리방침</a></li>
+          <li><a href="/support">고객센터</a></li>
+        </ul>
+      </nav>
+      <div class="footer__bottom">
+        <small class="footer__copyright">
+          © 2025 B2Colla. All rights reserved.
+        </small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const visionSection = document.querySelector('.vision');
+    const bg = document.querySelector('.vision__bg');
+    const rocket = document.querySelector('.rocket__wrapper');
+    const orbit = document.querySelector('.vision__orbit');
+    const canvas = document.querySelector('.vision__particle');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          bg.classList.add('animate');
+          rocket.classList.add('animate');
+          canvas.classList.add('animate');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(visionSection);
+
+    rocket.addEventListener('transitionend', () => {
+      rocket.classList.add('idle');
+      orbit.classList.add('animate');
+    });
+
+    orbit.addEventListener('transitionend', () => {
+
+      const items = document.querySelectorAll('.vision__item');
+      items.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add('show');
+        }, index * 600);
+      });
+    });
+
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+    const mouse = { x: null, y: null, radius: 200 };
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.x;
+      mouse.y = e.y;
+    });
+
+    function createParticles(count = 50) {
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 6 + 1,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5,
+      }));
+    }
+
+    function updateParticle(p) {
+      const dx = mouse.x - p.x;
+      const dy = mouse.y - p.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < mouse.radius) {
+        const force = (mouse.radius - distance) / mouse.radius;
+        p.x -= (dx / distance) * force * -1;
+        p.y -= (dy / distance) * force * -1;
+      }
+
+      p.x += p.dx;
+      p.y += p.dy;
+
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    }
+
+    function drawParticle(p) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(249, 196, 0, 0.4)';
+      ctx.fill();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p) => {
+        updateParticle(p);
+        drawParticle(p);
+      });
+      requestAnimationFrame(animate);
+    }
+
+    createParticles();
+    animate();
+  </script>
+</body>
+
+</html>

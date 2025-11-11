@@ -15,10 +15,10 @@
   <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon">
 
   <!-- 외부 CSS -->
-  <link rel="stylesheet" href="./css/variables.css">
-  <link rel="stylesheet" href="./css/header.css">
-  <link rel="stylesheet" href="./css/foooter.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/foooter.css">
+  <link rel="stylesheet" href="/css/index.css">
 
   <!-- 폰트 -->
   <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
@@ -39,7 +39,7 @@
           <li class="header__nav-item">
             <a href="about-intro.html" class="header__nav-link">서비스 소개</a>
             <ul class="header__nav-sub-list active">
-              <li><a href="about-intro.html" class="header__nav-sub-link">비투콜라</a></li>
+              <li><a href="/page/about/about-intro.html" class="header__nav-sub-link">비투콜라 소개</a></li>
               <li><a href="about-guide.html" class="header__nav-sub-link">이용 가이드</a></li>
               <li><a href="about-partnership.html" class="header__nav-sub-link">제휴/문의</a></li>
             </ul>
@@ -291,121 +291,7 @@
     </div>
   </footer>
 
-  <script src="./scripts/index/heroParticles.js"></script>
-  <script>
-    window.addEventListener("scroll", () => {
-      const header = document.querySelector(".header");
-      const scrollY = window.scrollY;
-      const viewportHeight = window.innerHeight;
-
-      if (scrollY > viewportHeight) {
-        header.classList.remove("header--index");
-      } else {
-        header.classList.add("header--index");
-      }
-    });
-
-    const imageBoxes = document.querySelectorAll(".cta__image-box");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.4 });
-
-    imageBoxes.forEach(box => observer.observe(box));
-
-
-    const title = document.getElementById("animated-title");
-    const text = title.textContent;
-    title.textContent = "";
-
-    // 글자별 <span> 생성
-    text.split("").forEach((char) => {
-      const span = document.createElement("span");
-      span.textContent = char;
-      title.appendChild(span);
-    });
-
-    // IntersectionObserver 설정
-    const titleObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const spans = entry.target.querySelectorAll("span");
-          spans.forEach((span, i) => {
-            span.style.animation = `fadeInSparkle 0.6s forwards`;
-            span.style.animationDelay = `${i * 0.05}s`;
-          });
-        } else {
-          // 화면에서 벗어나면 초기 상태로 되돌리기
-          const spans = entry.target.querySelectorAll("span");
-          spans.forEach(span => {
-            span.style.animation = "none";
-          });
-        }
-      });
-    }, { threshold: 0.4 });
-
-    titleObserver.observe(title);
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const counter = document.querySelector(".partners__count--number");
-      const target = +counter.dataset.target;
-      let started = false;
-
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !started) {
-            started = true;
-            let count = 0;
-            const speed = 3; // 속도 조절 (1 = 빠름, 5 = 느림)
-            const interval = setInterval(() => {
-              count += Math.ceil(target / 100);
-              if (count >= target) {
-                count = target;
-                clearInterval(interval);
-                counter.classList.add("animate");
-                setTimeout(() => counter.classList.remove("animate"), 400);
-              }
-              counter.textContent = count.toLocaleString();
-            }, speed * 10);
-          }
-        });
-      });
-
-      observer.observe(counter);
-    });
-
-    // 모든 .benefit 요소 선택
-    const benefits = document.querySelectorAll('.benefit');
-
-    // Intersection Observer 옵션
-    const options = {
-      root: null, // viewport 기준
-      rootMargin: '0px',
-      threshold: 0.5 // 화면에 50% 이상 보여야 활성화
-    };
-
-    // 콜백 함수
-    const callback = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active'); // 보이면 active 추가
-        } else {
-          entry.target.classList.remove('active'); // 화면 밖이면 제거
-        }
-      });
-    };
-
-    // Observer 생성
-    const benefitsObserver = new IntersectionObserver(callback, options);
-
-    // 각 benefit에 observer 적용
-    benefits.forEach(benefit => benefitsObserver.observe(benefit));
-
-  </script>
+  <script src="./scripts/index/index.js"></script>
 </body>
 
 </html>

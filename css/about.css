@@ -1,0 +1,367 @@
+/* ===== 공통 변수 ===== */
+:root {
+  --color-primary: #0077ff;
+  --color-secondary: #0056b3;
+  --color-background: #f9fafb;
+  --color-text: #333;
+  --color-muted: #666;
+  --color-white: #fff;
+
+  --spacing-section: 100px;
+  --max-width: 1100px;
+}
+
+
+.main {
+  padding-top: 74px;
+}
+
+.main section {
+  position: relative;
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+.main section:not(:first-child) {
+  padding-top: 80px;
+}
+
+/* ===== intro ===== */
+.intro {
+  text-align: center;
+  background-color: var(--white-90);
+}
+
+.intro__bg {
+  background: url('/assets/image/about/intro-bg.png');
+}
+
+/* ===== vision ===== */
+.vision {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100%;
+  min-height: 850px;
+}
+
+.vision__bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400%;
+  background: linear-gradient(180deg,
+      #01040F 0%,
+      /* 깊은 우주: 거의 검정 */
+      #0C1B3B 20%,
+      /* 어두운 밤하늘 */
+      #2B4980 45%,
+      /* 상공/창공 느낌 */
+      #336396 65%,
+      /* 낮은 구름/상공 */
+      #54DAFF 100%
+      /* 맑은 하늘 */
+    );
+  z-index: -1;
+  transform: translateY(0);
+  transition: all 4s ease;
+}
+
+.vision__bg.animate {
+  transform: translateY(75%);
+}
+
+/* 행성 */
+.vision__orbit {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  top: 80px;
+  left: 50%;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, 50px);
+  transition: all 1s;
+}
+
+.vision__orbit.animate {
+  opacity: 1;
+  transform: translateX(-50%);
+}
+
+.vision__planet {
+  position: absolute;
+  top: 68px;
+  left: 50%;
+  width: 40px;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.vision__planet-title {
+  position: absolute;
+  top: 112px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--accent-primary);
+  font-weight: 900;
+  font-size: var(--font-size-h2);
+  font-family: 'Paperozi';
+}
+
+.vision__orbit-line {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.vision__symbol {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  top: calc(50% - 11px);
+  left: calc(50% - 11px);
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px rgba(249, 196, 0, 0.6);
+}
+
+.vision__symbol--1 {
+  animation: orbit-move 9s linear infinite;
+}
+
+.vision__symbol--2 {
+  animation: orbit-move 12s linear infinite reverse;
+}
+
+.vision__symbol--3 {
+  animation: orbit-move 15s linear infinite;
+}
+
+@keyframes orbit-move {
+  from {
+    transform: rotate(0deg) translateX(120px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(120px) rotate(-360deg);
+  }
+}
+
+/* 로켓 */
+.rocket__wrapper {
+  position: absolute;
+  top: 260px;
+  left: 50%;
+  transform: translate(-50%, 200%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s;
+}
+
+.rocket__wrapper.animate {
+  transform: translateX(-50%);
+}
+
+.rocket__wrapper.animate {
+  transform: translateX(-50%);
+}
+
+.rocket__wrapper.idle {
+  animation: rocket-hover 2s ease-in-out infinite alternate;
+}
+
+@keyframes rocket-hover {
+  0% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, 5px);
+  }
+
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+.rocket {
+  width: 100px;
+}
+
+.vision__particle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 6s;
+}
+
+.vision__particle.animate {
+  opacity: 1;
+}
+
+/* 메시지 리스트 */
+.vision__container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  top: 520px;
+}
+
+.vision__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.vision__item {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+  padding: 32px 32px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  transition: all 0.4s ease;
+  font-family: 'Paperozi';
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all .4s;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.vision__item.show:hover {
+  transform: translateY(-10px);
+  border-color: rgba(249, 196, 0, 0.6);
+  box-shadow: 0 0 10px rgba(249, 196, 0, 0.3);
+}
+
+.vision__item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vision__title {
+  font-size: var(--font-size-h3);
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 4px rgba(249, 196, 0, .5);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.vision__desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  text-shadow: 0 0 8px rgba(249, 196, 0, 0.1);
+}
+
+/* ===== features ===== */
+.features {
+  background-color: #f7f9fc;
+}
+
+.features__title {
+  text-align: center;
+  font-size: var(--font-size-title);
+  color: var(--color-primary);
+  margin-bottom: 60px;
+}
+
+.features__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+}
+
+.features__item {
+  background-color: var(--color-white);
+  border: 1px solid #e3e7ee;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.features__item-title {
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.features__item-desc {
+  color: var(--color-muted);
+  font-size: var(--font-size-body);
+}
+
+/* ===== future ===== */
+.future {
+  text-align: center;
+  background: var(--color-white);
+}
+
+.future__title {
+  font-size: var(--font-size-title);
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+}
+
+.future__text {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--color-muted);
+  font-size: var(--font-size-body);
+}
+
+/* ===== join ===== */
+.join {
+  text-align: center;
+  background: linear-gradient(to right, #0077ff, #00b4ff);
+  color: var(--color-white);
+}
+
+.join__title {
+  font-size: var(--font-size-title);
+  margin-bottom: 20px;
+}
+
+.join__text {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: var(--font-size-body);
+}
+
+.join__button {
+  display: inline-block;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.join__button:hover {
+  background-color: #f1f6ff;
+  transform: translateY(-3px);
+}

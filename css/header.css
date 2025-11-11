@@ -4,7 +4,7 @@
     left: 0;
     width: 100vw;
     height: 74px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: var(--white-90);
     z-index: 199;
     display: flex;
@@ -103,7 +103,7 @@
     width: 100%;
     top: 74px;
     left: 0;
-    background-color: var(--accent-primary);
+    background-color: #e7bb16;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: var(--white-100);
     display: flex;
@@ -114,7 +114,6 @@
     visibility: hidden;
     overflow: hidden;
     font-size: var(--font-size-body);
-    font-weight: 600;
     transition: all .4s;
 }
 
