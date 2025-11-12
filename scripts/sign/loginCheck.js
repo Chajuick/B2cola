@@ -7,6 +7,7 @@ const publicPages = [
   "/page/sign/login.html",
   "/page/sign/signup.html",
   "/page/about/about-intro.html",
+  "/page/about/about-guide.html",
   "/"
 ];
 

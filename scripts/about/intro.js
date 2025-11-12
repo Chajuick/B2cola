@@ -96,7 +96,7 @@ function animate() {
 createParticles();
 animate();
 
-const items = document.querySelectorAll('.features__item');
+const items = document.querySelectorAll('.zigzag__item');
 
 function checkScroll() {
     const triggerBottom = window.innerHeight * 0.85;
