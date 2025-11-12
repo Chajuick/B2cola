@@ -510,6 +510,11 @@
   font-family: 'Paperozi';
 }
 
+.tier__plan-unit {
+  font-size: var(--font-size-body);
+  opacity: .76;
+}
+
 .tier__plan-list {
   padding: 0;
   margin-bottom: 30px;
