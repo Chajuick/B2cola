@@ -521,6 +521,14 @@
   text-align: left;
 }
 
+.tier__plan--highlight .tier__plan-item {
+  font-weight: 600;
+}
+
+.tier__plan--highlight .tier__plan-button {
+  font-weight: 800;
+}
+
 .tier__plan-item {
   margin: 12px 0;
   font-size: 1rem;
