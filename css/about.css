@@ -486,14 +486,14 @@
 }
 
 .tier__plan--highlight .tier__plan-title::after {
-  content: "추천";
+  content: "BEST";
   position: absolute;
   top: 50%;
-  right: -46px;
-  width: 40px;
+  right: -52px;
+  width: 46px;
   text-align: center;
-  padding: 2px 0;
-  font-size: var(--font-size-small);
+  padding: 4px 0;
+  font-size: var(--font-size-tiny);
   font-weight: 600;
   background-color: #d64949;
   color: var(--white-100);
