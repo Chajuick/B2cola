@@ -1,3 +1,57 @@
+.btn {
+    cursor: pointer;
+    min-width: 160px;
+}
+
+.btn--primary {
+    margin-top: 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--accent-primary);
+    font-weight: 600;
+    font-size: var(--font-size-body);
+    border-radius: 8px;
+    padding: 12px 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 1px solid var(--accent-primary);
+}
+
+.btn--primary:hover {
+    background-color: var(--accent-primary);
+    color: var(--white-90);
+    transform: translateY(-2px);
+}
+
+.btn--primary.reverse {
+    background-color: var(--accent-primary);
+    color: var(--white-90);
+}
+
+.btn--primary.reverse:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+}
+
+.btn--dark {
+    background-color: var(--black-90);
+    color: var(--accent-primary);
+    font-weight: 600;
+    font-size: var(--font-size-body);
+    border-radius: 8px;
+    padding: 12px 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn--dark:hover {
+    background-color: var(--accent-primary);
+    color: var(--white-90);
+    transform: translateY(-2px);
+}
+
 .main__header-bg {
     position: relative;
     width: 100%;
@@ -21,40 +75,40 @@
     position: relative;
     padding-top: 120px;
     font-size: var(--font-size-display);
-    color: var(--white-90);
+    color: var(--white-50);
     z-index: 1;
     font-weight: 800;
     font-family: 'Paperozi';
 }
 
 .main__container {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  background-color: var(--white-90);
-  margin: 0 auto;
-  padding: 40px;
-  transform: translateY(-160px);
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    background-color: var(--white-90);
+    margin: 0 auto;
+    padding: 40px;
+    transform: translateY(-160px);
 }
 
 .main__title {
-  font-size: var(--font-size-display);
-  color: var(--accent-primary);
-  font-family: 'Paperozi';
-  font-weight: 800;
-  margin-bottom: 1rem;
+    font-size: var(--font-size-display);
+    color: var(--accent-primary);
+    font-family: 'Paperozi';
+    font-weight: 800;
+    margin-bottom: 1rem;
 }
 
 .main__subtitle {
-  font-size: var(--font-size-h2);
-  color: var(--black-50);
-  margin-bottom: 40px;
+    font-size: var(--font-size-h2);
+    color: var(--black-50);
+    margin-bottom: 40px;
 }
 
 .main__text {
-  max-width: 800px;
-  margin: 0 auto 20px;
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-normal);
-  color: var(--black-40);
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-normal);
+    color: var(--black-40);
 }
