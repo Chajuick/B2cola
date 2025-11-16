@@ -52,6 +52,16 @@
     transform: translateY(-2px);
 }
 
+.btn--dark.reverse {
+    background-color: var(--accent-primary);
+    color: var(--white-90);
+}
+
+.btn--dark.reverse:hover {
+    background-color: var(--black-90);
+    color: var(--accent-primary);
+}
+
 .toggle-container {
     position: relative;
     margin: 0 auto;

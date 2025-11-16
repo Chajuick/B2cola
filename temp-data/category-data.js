@@ -31,12 +31,12 @@ const ksicCode = [
 
 // 1차 대분류 (MainCategory)
 const mainCategory = [
-    { id: 1, name: "제조업" },
-    { id: 2, name: "서비스업" },
-    { id: 3, name: "유통·물류" },
-    { id: 4, name: "건설·부동산" },
-    { id: 5, name: "공공·비영리" },
-    { id: 6, name: "에너지·환경" }
+    { id: 1, name: "제조업", color: "#5CAED6" },
+    { id: 2, name: "서비스업", color: "#AA81C1" },
+    { id: 3, name: "유통·물류", color: "#E69A66" },
+    { id: 4, name: "건설·부동산", color: "#C7B042" },
+    { id: 5, name: "공공·비영리", color: "#6482A0" },
+    { id: 6, name: "에너지·환경", color: "#4EB678" }
 ];
 
 // 2차 소분류 (SubCategory)
@@ -116,4 +116,18 @@ const subKsicMapping = [
 
     { sub_id: 601, ksic_id: 60 },
     { sub_id: 602, ksic_id: 61 }
+];
+
+// 지역 분류
+const regionsCategory = [
+  { id: 1, name: "내 주변", color: "#4f83cc", class: "gyeonggi" },
+  { id: 2, name: "경기권", color: "#2ca077", class: "chungnam" },
+  { id: 3, name: "충남권", color: "#d48806", class: "chungbuk" },
+  { id: 4, name: "충북권", color: "#f27c38", class: "jeonnam" },
+  { id: 5, name: "전남권", color: "#7a5ce6", class: "jeonbuk" },
+  { id: 6, name: "전북권", color: "#e75497", class: "gyeongnam" },
+  { id: 7, name: "경남권", color: "#1fb7d4", class: "gyeongbuk" },
+  { id: 8, name: "경북권", color: "#0ea693", class: "gangwon" },
+  { id: 9, name: "강원", color: "#f23f5e", class: "jeju" },
+  { id: 10, name: "제주", color: "#5c6cef", class: "my-area" }
 ];
