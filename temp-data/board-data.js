@@ -187,8 +187,8 @@ const noticeBoard = [
     {
         id: "POST-001",
         category: "notice",
-        title: "서버 점검 안내 (01/15)dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
-        content: "안정적인 서비스 제공을 위해 1월 15일 새벽 서버 점검을 진행합니다.dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        title: "서버 점검 안내 (01/15)",
+        content: "안정적인 서비스 제공을 위해 1월 15일 새벽 서버 점검을 진행합니다.",
         thumbnail: "/thumb/system_01.png",
         isPinned: true,
         authorId: "admin001",

@@ -120,14 +120,13 @@ const subKsicMapping = [
 
 // 지역 분류
 const regionsCategory = [
-  { id: 1, name: "내 주변", color: "#4f83cc", class: "gyeonggi" },
-  { id: 2, name: "경기권", color: "#2ca077", class: "chungnam" },
-  { id: 3, name: "충남권", color: "#d48806", class: "chungbuk" },
-  { id: 4, name: "충북권", color: "#f27c38", class: "jeonnam" },
-  { id: 5, name: "전남권", color: "#7a5ce6", class: "jeonbuk" },
-  { id: 6, name: "전북권", color: "#e75497", class: "gyeongnam" },
-  { id: 7, name: "경남권", color: "#1fb7d4", class: "gyeongbuk" },
-  { id: 8, name: "경북권", color: "#0ea693", class: "gangwon" },
-  { id: 9, name: "강원", color: "#f23f5e", class: "jeju" },
-  { id: 10, name: "제주", color: "#5c6cef", class: "my-area" }
+  { id: 1, name: "경기권", color: "#4f83cc", class: "gyeonggi" },
+  { id: 2, name: "충남권", color: "#2ca077", class: "chungnam" },
+  { id: 3, name: "충북권", color: "#d48806", class: "chungbuk" },
+  { id: 4, name: "전남권", color: "#f27c38", class: "jeonnam" },
+  { id: 5, name: "전북권", color: "#7a5ce6", class: "jeonbuk" },
+  { id: 6, name: "경남권", color: "#e75497", class: "gyeongnam" },
+  { id: 7, name: "경북권", color: "#1fb7d4", class: "gyeongbuk" },
+  { id: 8, name: "강원", color: "#0ea693", class: "gangwon" },
+  { id: 9, name: "제주", color: "#f23f5e", class: "jeju" },
 ];

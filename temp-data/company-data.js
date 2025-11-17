@@ -1,6 +1,6 @@
 const company = [
   {
-    id: 1, name: "ESG 경영합동조합dddddddddddd", website: "", detail: "ESG 경영 관련 협업과 프로젝트를 진행하는 조합입니다.", image: "esg4u.png",
+    id: 1, name: "ESG 경영합동조합", website: "", detail: "ESG 경영 관련 협업과 프로젝트를 진행하는 조합입니다.", image: "esg4u.png",
     region: "gyeongnam", popularity: 82, cooperating: true, done: 7, membership: 2
   },
 

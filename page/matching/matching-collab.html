@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <!-- 기본 메타 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="B2Colla | 기업 간 협업을 더 쉽게. 비투콜라에 등록하면 기업이 보인다!">
+  <meta name="author" content="B2Colla Team">
+
+  <!-- 페이지 제목 -->
+  <title>비투콜라</title>
+
+  <!-- 파비콘 -->
+  <link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+
+  <!-- 외부 CSS -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/public.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/foooter.css">
+  <link rel="stylesheet" href="/css/sign.css">
+  <link rel="stylesheet" href="/css/matching.css">
+
+  <!-- 폰트 -->
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+
+  <script src="/scripts/sign/loginCheck.js"></script>
+  <script src="https://kit.fontawesome.com/a83ad827ef.js" crossorigin="anonymous"></script>
+
+  <script src="/scripts/page/loginCheck.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <a href="/"><img src="/assets/image/ci/b2colla.png" alt="비투콜라 로고" class="header__logo-image" /></a>
+      </div>
+
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="/page/about/about-intro.html" class="header__nav-link">서비스 소개</a>
+            <ul class="header__nav-sub-list active">
+              <li><a href="/page/about/about-intro.html" class="header__nav-sub-link">비투콜라 소개</a></li>
+              <li><a href="/page/about/about-guide.html" class="header__nav-sub-link">이용 가이드</a></li>
+              <li><a href="/page/about/about-partnership.html" class="header__nav-sub-link">제휴 문의</a></li>
+            </ul>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="/page/matching/matching-meta.html" class="header__nav-link">파트너 매칭</a>
+            <ul class="header__nav-sub-list">
+              <li><a href="/page/matching/matching-meta.html" class="header__nav-sub-link">통합검색</a></li>
+              <li><a href="/page/matching/matching-company.html" class="header__nav-sub-link">기업검색</a></li>
+              <li><a href="/page/matching/matching-collab.html" class="header__nav-sub-link">협업게시판</a></li>
+            </ul>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="support-gov.html" class="header__nav-link">지원사업</a>
+            <ul class="header__nav-sub-list">
+              <li><a href="support-gov.html" class="header__nav-sub-link">통합검색</a></li>
+              <li><a href="support-tech.html" class="header__nav-sub-link">기술개발</a></li>
+              <li><a href="support-fund.html" class="header__nav-sub-link">자금/금융</a></li>
+              <li><a href="support-hr.html" class="header__nav-sub-link">인력/교육</a></li>
+            </ul>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="news-notice.html" class="header__nav-link">소식</a>
+            <ul class="header__nav-sub-list">
+              <li><a href="news-notice.html" class="header__nav-sub-link">공지사항</a></li>
+              <li><a href="news-press.html" class="header__nav-sub-link">보도자료</a></li>
+            </ul>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="support-faq.html" class="header__nav-link">고객센터</a>
+            <ul class="header__nav-sub-list">
+              <li><a href="support-faq.html" class="header__nav-sub-link">FAQ</a></li>
+              <li><a href="support-contact.html" class="header__nav-sub-link">1:1 문의</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="/page/sign/login.html" class="header__actions-login">로그인</a>
+        <div class="header__actions-lang">
+          <a href="/?lang=ko" class="header__lang-option header__lang-option--active">KOR</a>
+          <a href="/?lang=en" class="header__lang-option">ENG</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- 🔍 통합 검색 -->
+    <section class="main__top">
+      <h1 class="search-title">비투콜라 협업게시판</h1>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" class="main__search-input" placeholder="기업명, 업종, 키워드 등을 검색하세요." />
+        <button class="search-btn">검색</button>
+      </div>
+      <div class="search-suggestions">
+        <span class="tag-b2b">#B2B</span>
+        <span class="tag-marketing">#마케팅</span>
+        <span class="tag-tech">#기술제휴</span>
+        <span class="tag-startup">#스타트업</span>
+        <span class="tag-invest">#투자</span>
+      </div>
+    </section>
+
+    <!-- 필터 -->
+    <section class="main__mid">
+      <div class="search__filter">
+        <div class="filter__helper">
+          <h2 class="helper-title"><b>요청</b>과 <b>제안</b>이 연결되는 협업 공간</h2>
+          <p class="helper-desc">
+            우리에게 필요한 기업, 그리고 우리를 찾는 기업이 자연스럽게 연결되는<br />
+            빠르고 실용적인 협업 공간입니다.
+          </p>
+        </div>
+
+        <ul class="filter__list">
+          <li class="filter__item">
+            <div class="filter__item-header">지역</div>
+            <ul class="filter__content-list">
+              <li class="filter__content-list-item tab-button gyeonggi active">경기권</li>
+              <li class="filter__content-list-item tab-button chungnam active">충남권</li>
+              <li class="filter__content-list-item tab-button chungbuk">충북권</li>
+              <li class="filter__content-list-item tab-button jeonnam">전남권</li>
+              <li class="filter__content-list-item tab-button jeonbuk">전북권</li>
+              <li class="filter__content-list-item tab-button gyeongnam active">경남권</li>
+              <li class="filter__content-list-item tab-button gyeongbuk">경북권</li>
+              <li class="filter__content-list-item tab-button gangwon">강원</li>
+              <li class="filter__content-list-item tab-button jeju">제주</li>
+            </ul>
+          </li>
+          <li class="filter__item">
+            <div class="filter__item-header">업종</div>
+            <ul class="filter__content-list industry">
+              <li class="filter__content-list-item tab-button industry active" style="--sub-color: #5CAED6;">제조업</li>
+              <li class="filter__content-list-item tab-button industry" style="--sub-color: #AA81C1;">서비스업</li>
+              <li class="filter__content-list-item tab-button industry" style="--sub-color: #E69A66;">유통·물류</li>
+              <li class="filter__content-list-item tab-button industry active" style="--sub-color: #C7B042;">건설·부동산</li>
+              <li class="filter__content-list-item tab-button industry" style="--sub-color: #6482A0;">공공·비영리</li>
+              <li class="filter__content-list-item tab-button industry" style="--sub-color: #4EB678;">에너지·환경</li>
+            </ul>
+          </li>
+          <li class="filter__item">
+            <div class="filter__item-header">관심기업만</div>
+            <div class="filter__content">
+              <input type="checkbox" class="checkbox" id="chk1">
+              <label for="chk1"></label>
+            </div>
+          </li>
+          <li class="filter__buttons">
+            <button class="filter__reset">필터 초기화</button>
+            <button class="filter__apply">필터 적용하기</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+<section class="collab-board">
+  <div class="collab-filter">
+    <select id="categoryFilter">
+      <option value="">전체</option>
+      <option value="proposal">제안</option>
+      <option value="partner">요청</option>
+    </select>
+
+    <select id="deadlineFilter">
+      <option value="">전체</option>
+      <option value="soon">마감임박</option>
+      <option value="later">여유</option>
+    </select>
+
+    <select id="regionFilter">
+      <option value="">전체 지역</option>
+      <option value="seoul">서울</option>
+      <option value="gyeonggi">경기</option>
+    </select>
+  </div>
+
+  <div class="collab-list">
+    <!-- JS로 카드 렌더링 -->
+  </div>
+</section>
+
+    <section class="main__bot">
+      <div class="main__block xl company">
+        <div class="sorting__controls">
+          <div class="sort-options">
+            <span class="sort active" data-sort="popular">인기순</span>
+            <span class="sort" data-sort="new">신규순</span>
+          </div>
+          <div class="view-count">
+            <label for="view-count">페이지당 개수</label>
+            <select id="view-count">
+              <option value="10">10개씩 보기</option>
+              <option value="20">20개씩 보기</option>
+              <option value="50">50개씩 보기</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="company-board-content"></div>
+
+        <div class="pagination">
+          <button class="prev">이전</button>
+          <span class="page-numbers">
+            <button class="page active">1</button>
+            <button class="page">2</button>
+            <button class="page">3</button>
+            <button class="page">4</button>
+            <button class="page">5</button>
+          </span>
+          <button class="next">다음</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <section class="footer__info">
+        <h2 class="footer__company">비투콜라</h2>
+        <address class="footer__address">
+          경남 창원시 마산회원구 내서읍 광려천남로 59<br />
+          경남로봇랜드재단 618호
+        </address>
+      </section>
+
+      <section class="footer__contact">
+        <p>TEL <a href="tel:055-224-6633">055-224-6633~5</a></p>
+        <p>FAX 070-4275-5487</p>
+      </section>
+
+      <nav class="footer__nav">
+        <ul class="footer__links">
+          <li><a href="/terms">이용약관</a></li>
+          <li><a href="/privacy">개인정보 처리방침</a></li>
+          <li><a href="/support">고객센터</a></li>
+        </ul>
+      </nav>
+      <div class="footer__bottom">
+        <small class="footer__copyright">
+          © 2025 B2Colla. All rights reserved.
+        </small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/temp-data/board-data.js"></script>
+  <script src="/temp-data/category-data.js"></script>
+  <script src="/temp-data/company-data.js"></script>
+
+  <script src="/scripts/matching/collab.js"></script>
+</body>
+
+</html>

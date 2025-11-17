@@ -27,7 +27,7 @@ orbit.addEventListener('transitionend', () => {
     items.forEach((item, index) => {
         setTimeout(() => {
             item.classList.add('show');
-        }, index * 600);
+        }, index * 300);
     });
 });
 

@@ -46,7 +46,7 @@
       #336396 65%,
       #54DAFF 100%);
   transform: translateY(0);
-  transition: all 4s ease;
+  transition: all 2s ease;
 }
 
 .vision__bg.animate {
@@ -111,15 +111,15 @@
 }
 
 .vision__symbol--1 {
-  animation: orbit-move 9s linear infinite;
+  animation: orbit-move 4s linear infinite;
 }
 
 .vision__symbol--2 {
-  animation: orbit-move 12s linear infinite reverse;
+  animation: orbit-move 6s linear infinite reverse;
 }
 
 .vision__symbol--3 {
-  animation: orbit-move 15s linear infinite;
+  animation: orbit-move 8s linear infinite;
 }
 
 @keyframes orbit-move {
@@ -140,7 +140,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .rocket__wrapper.animate {
@@ -334,6 +334,7 @@
   box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.1);
   transform: translateX(50px);
   transition: all .8s;
+  object-fit: cover;
 }
 
 .zigzag__item.mobile {

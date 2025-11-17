@@ -9,7 +9,7 @@ const publicPages = [
   "/page/about/about-intro.html",
   "/page/about/about-guide.html",
   "/page/about/about-partnership.html",
-  "/page/matching/matching-explore.html",
+  "/page/matching/matching-meta.html",
   "/"
 ];
 
@@ -18,7 +18,7 @@ if (
   loggedUser &&
   (currentPath === "/page/sign/login.html" || currentPath === "/page/sign/signup.html")
 ) {
-  window.location.href = "/page/main/explore.html";
+  window.location.href = "/page/matching/matching-meta.html";
 }
 
 

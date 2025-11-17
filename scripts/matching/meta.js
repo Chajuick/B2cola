@@ -255,45 +255,48 @@ function renderCompanyList(list) {
               class="company-card__image" />`
       : `<div class="company-card__no-image">${c.name}</div>`;
 
+    const linkHTML = c.website
+      ? `<a href="${c.website}" class="btn-website" target="_blank">
+          웹사이트 방문
+        </a>`
+      : `<div href="${c.website}" class="btn-website disabled">
+          웹사이트 없음
+        </div>`;
+
     const item = document.createElement('div');
     item.className = 'company-item';
     item.innerHTML = `
-<div class="company-card">
-  <div class="company-top">
-                <div class="company-logo">
-                    ${imageHTML}
-                </div>
+    <div class="company-card">
+      <div class="company-top">
+        <div class="company-logo">${imageHTML}</div>
 
-    <div class="company-main">
-      <h3 class="company-name">${c.name}</h3>
+        <div class="company-main">
+          <h3 class="company-name">${c.name}</h3>
 
-      <!-- 팔로워 -->
-      <div class="company-follow">
-        <span class="followers"><b>${c.popularity.toLocaleString()}</b> 팔로워</span>
+          <!-- 팔로워 -->
+          <div class="company-follow">
+            <span class="followers"><b>${c.popularity.toLocaleString()}</b> 팔로워</span>
 
-        <button class="btn-follow ${c.isFollowing ? 'unfollow' : 'follow'}" data-id="${c.id}">
-          ${c.isFollowing ? '<b class="follow">✔</b> 관심기업' : '<b class="unfollow">♥</b> 관심기업 추가'}
-        </button>
+            <button class="btn-follow ${c.isFollowing ? 'unfollow' : 'follow'}" data-id="${c.id}">
+              ${c.isFollowing ? '<b class="follow">✔</b> 관심기업' : '<b class="unfollow">♥</b> 관심기업 추가'}
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="company-right">
-    <a href="${c.website}" class="btn-website" target="_blank">
-      웹사이트 방문
-    </a>
+      <div class="company-right">
+        <a href="/company/${c.id}" class="btn-detail">
+          상세보기
+        </a>
+        ${linkHTML}
+      </div>
 
-    <a href="/company/${c.id}" class="btn-detail">
-      상세보기
-    </a>
-  </div>
-
-        <!-- 태그 영역 -->
+      <!-- 태그 영역 -->
       <div class="company-tags">
         <span class="tag industry" style="background-color: ${subColor}">${subName}</span>
         <span class="tag region" style="background-color: ${regionColor}">${regionName}</span>
       </div>
-</div> 
+    </div> 
     `;
     container.appendChild(item);
   });

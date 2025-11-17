@@ -50,11 +50,11 @@
           </li>
 
           <li class="header__nav-item">
-            <a href="/page/matching/matching-explore.html" class="header__nav-link">파트너 매칭</a>
+            <a href="/page/matching/matching-meta.html" class="header__nav-link">파트너 매칭</a>
             <ul class="header__nav-sub-list">
-              <li><a href="/page/matching/matching-explore.html" class="header__nav-sub-link">통합검색</a></li>
-              <li><a href="matching-request.html" class="header__nav-sub-link">협업 요청하기</a></li>
-              <li><a href="matching-propose.html" class="header__nav-sub-link">협업 제안하기</a></li>
+              <li><a href="/page/matching/matching-meta.html" class="header__nav-sub-link">통합검색</a></li>
+              <li><a href="/page/matching/matching-company.html" class="header__nav-sub-link">기업검색</a></li>
+              <li><a href="/page/matching/matching-collab.html" class="header__nav-sub-link">협업게시판</a></li>
             </ul>
           </li>
 
@@ -100,14 +100,18 @@
 
     <!-- 🔍 통합 검색 -->
     <section class="main__top">
+      <h1 class="search-title">비투콜라 통합검색</h1>
       <div class="search-box">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
         <input type="text" class="main__search-input" placeholder="기업명, 업종, 키워드 등을 검색하세요." />
         <button class="search-btn">검색</button>
       </div>
       <div class="search-suggestions">
-        <span>#B2B</span><span>#마케팅</span><span>#기술제휴</span>
-        <span>#스타트업</span><span>#투자</span>
+        <span class="tag-b2b">#B2B</span>
+        <span class="tag-marketing">#마케팅</span>
+        <span class="tag-tech">#기술제휴</span>
+        <span class="tag-startup">#스타트업</span>
+        <span class="tag-invest">#투자</span>
       </div>
     </section>
 
@@ -205,8 +209,8 @@
             </div>
 
             <div class="profile-actions">
-              <button class="btn btn--logout">내 정보 수정</button>
-              <button class="btn btn--profile">로그아웃</button>
+              <button class="btn btn--profile">내 정보 수정</button>
+              <button class="btn btn--logout">로그아웃</button>
             </div>
           </div>
         </div>
@@ -299,8 +303,7 @@
   <script src="/temp-data/company-data.js"></script>
 
   <script src="/temp-data/board-data.js"></script>
-  <script src="/scripts/matching/explore.js"></script>
-  <script src="/scripts/matching/explore.js"></script>
+  <script src="/scripts/matching/meta.js"></script>
 </body>
 
 </html>
