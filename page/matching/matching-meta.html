@@ -105,8 +105,15 @@
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
         <input type="text" class="main__search-input" placeholder="기업명, 업종, 키워드 등을 검색하세요." />
         <button class="search-btn">검색</button>
+        <div class="search-suggestions">
+          <ul class="suggestions__list"></ul>
+          <div class="suggestions__bottom">
+            <p>검색기록 삭제</p>
+            <p>닫기</p>
+          </div>
+        </div>
       </div>
-      <div class="search-suggestions">
+      <div class="search-tags">
         <span class="tag-b2b">#B2B</span>
         <span class="tag-marketing">#마케팅</span>
         <span class="tag-tech">#기술제휴</span>
@@ -228,15 +235,18 @@
           <a href="/collab.html" class="link-more">전체 보기 →</a>
         </div>
 
-        <!-- 탭 메뉴 -->
-        <div class="tab-menu">
-          <button class="tab-button collab active" data-tab="all">전체</button>
-          <button class="tab-button collab" data-tab="partner">협업 파트너 찾기</button>
-          <button class="tab-button collab" data-tab="proposal">제안 등록 기업</button>
+        <!-- 카드 리스트 -->
+        <div class="block-content">
+          <div class="collab-gallery proposal">
+            <h3 class="gallery__title">제안 게시판</h3>
+            <div class="gallery__board"></div>
+          </div>
+          <div class="collab-gallery request">
+            <h3 class="gallery__title">요청 게시판</h3>
+            <div class="gallery__board"></div>
+          </div>
         </div>
 
-        <!-- 카드 리스트 -->
-        <div class="collab-gallery"></div>
       </div>
     </section>
 
@@ -268,6 +278,87 @@
       </div>
     </section>
   </main>
+
+  <div id="sidePanel" class="side-panel">
+    <div class="panel-header">
+      <h3>상세 정보</h3>
+      <button id="panelClose" class="panel-close">×</button>
+    </div>
+
+    <section class="company-detail">
+      <!-- ✅ 상단 기업 정보 -->
+      <div class="company-detail__header">
+        <img src="/assets/image/ci/sems.png" alt="기업 로고" class="company-detail__image" />
+        <div class="company-detail__info">
+          <h1 class="company-detail__name">주식회사 셈즈</h1>
+          <p class="company-detail__desc">
+            상수도 관로 세척 기술을 보유한 환경 전문 기업입니다.
+          </p>
+          <p class="company-detail__meta">
+            <i class="fa-solid fa-location-dot company-detail__meta-icon"></i> 인천
+            <i class="fa-solid fa-industry company-detail__meta-icon"></i> 도매/소매업
+          </p>
+        </div>
+      </div>
+
+      <div class="company-detail__actions">
+        <button class="company-detail__btn company-detail__btn--like">
+          <i class="fa-regular fa-heart"></i> 관심기업
+        </button>
+        <button class="company-detail__btn company-detail__btn--collab">
+          <i class="fa-solid fa-handshake"></i> 협업 제안
+        </button>
+        <a href="#" target="_blank" class="company-detail__btn company-detail__btn--link">
+          <i class="fa-solid fa-globe"></i> 공식 홈페이지
+        </a>
+      </div>
+
+      <!-- ✅ 기본 정보 -->
+      <div class="company-detail__section">
+        <h2 class="company-detail__title">기업 소개</h2>
+        <div class="company-detail__desc">
+          주식회사 샘즈는 스마트한 기술력과 풍부한 현장 경험을 바탕으로,
+          단순한 상수도 관리에서 나아가 지속 가능한 물 환경을 실현하는 종합 솔루션을 제공합니다.
+          사람과 환경, 그리고 미래를 유기적으로 연결하는 물산업의
+          새로운 기준이자, 신뢰받는 파트너로서의 역할을 성실히 수행해나가겠습니다.
+        </div>
+      </div>
+
+      <!-- ✅ 협업 통계 -->
+      <div class="company-detail__section">
+        <h2 class="company-detail__title">협업 현황</h2>
+        <div class="company-detail__stats">
+          <div class="company-detail__stat">
+            <span class="company-detail__stat-value">38</span>
+            <span class="company-detail__stat-label">총 협업 건수</span>
+          </div>
+          <div class="company-detail__stat">
+            <span class="company-detail__stat-value">92%</span>
+            <span class="company-detail__stat-label">협업 성공률</span>
+          </div>
+          <div class="company-detail__stat">
+            <span class="company-detail__stat-value">4.7</span>
+            <span class="company-detail__stat-label">평균 평점</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ 협업 리뷰 섹션 -->
+      <div class="company-detail__section company-review">
+        <h2 class="company-detail__title">협업 리뷰</h2>
+
+        <!-- 총 평점 -->
+        <div class="company-review__summary">
+          <p class="company-review__average">
+            <i class="fa-solid fa-star" style="color: var(--accent-primary);"></i> 총 평점:
+            <strong>4.5 / 5.0</strong>
+          </p>
+          <p class="company-review__count">총 12건의 협업 리뷰</p>
+        </div>
+      </div>
+      <a href="" class="more-link">더 자세히 알아보기</a>
+    </section>
+  </div>
 
   <footer class="footer">
     <div class="footer__inner">

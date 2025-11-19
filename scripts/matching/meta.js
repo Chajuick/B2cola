@@ -1,3 +1,121 @@
+/* 검색창 자동완성 */
+const inputEl = document.querySelector(".main__search-input");
+const suggestionList = document.querySelector(".suggestions__list");
+const suggestionBox = document.querySelector(".search-suggestions");
+const closeBtn = document.querySelector(".suggestions__bottom p:nth-child(2)");
+
+// suggestions 닫는 함수
+function closeSuggestions() {
+  suggestionBox.classList.remove("show");
+  suggestionList.innerHTML = "";
+}
+
+// 닫기 버튼 클릭 시
+closeBtn.addEventListener("click", () => {
+  closeSuggestions();
+});
+
+// 인풋 포커스 잃으면 닫힘
+inputEl.addEventListener("blur", (e) => {
+  // blur 직후 클릭 이벤트와 충돌 방지 위해 지연
+  setTimeout(() => {
+    if (!suggestionBox.contains(document.activeElement)) {
+      closeSuggestions();
+    }
+  }, 100);
+});
+
+// 바깥 클릭 시 닫힘
+document.addEventListener("click", (e) => {
+  const isClickInside = suggestionBox.contains(e.target) || inputEl.contains(e.target);
+  if (!isClickInside) {
+    closeSuggestions();
+  }
+});
+
+function disassembleHangul(char) {
+  const CHO = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"];
+  const JUNG = ["ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"];
+  const JONG = ["", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"];
+
+  const code = char.charCodeAt(0);
+
+  if (code >= 0xAC00 && code <= 0xD7A3) {
+    // 완성형 한글
+    const diff = code - 0xAC00;
+    const cho = Math.floor(diff / 588);
+    const jung = Math.floor((diff % 588) / 28);
+    const jong = diff % 28;
+
+    return [CHO[cho], JUNG[jung], JONG[jong]];
+  }
+
+  return [char]; // 비한글은 그대로
+}
+
+function splitToJamo(str) {
+  return str.split("").flatMap(disassembleHangul);
+}
+
+function matchKorean(word, keyword) {
+  const w = splitToJamo(word);
+  const k = splitToJamo(keyword);
+
+  // 단어의 앞부분이 keyword의 자모와 정확히 동일해야 한다
+  for (let i = 0; i < k.length; i++) {
+    if (w[i] !== k[i]) {
+      return false;  // 앞부분이 다르면 매칭 실패
+    }
+  }
+  return true;
+}
+
+inputEl.addEventListener("input", () => {
+  const keyword = inputEl.value.trim();
+
+  // 공백이면 추천창 접기 + 내용 비움
+  if (!keyword) {
+    suggestionList.innerHTML = "";
+    suggestionBox.classList.remove("show");
+    return;
+  }
+
+  const currentMatches = currentSearchData.filter(item => matchKorean(item, keyword));
+  const popularMatches = popularSearchData
+    .filter(item => matchKorean(item, keyword) && !currentMatches.includes(item));
+
+  const resultList = [...currentMatches, ...popularMatches].slice(0, 10);
+
+  // HTML 생성
+  let html = "";
+  resultList.forEach(item => {
+    // current 데이터라면
+    if (currentMatches.includes(item)) {
+      html += `
+        <li class="suggestions__item">
+          <span>
+            <i class="fa fa-clock-o suggestions__icon"></i>${item}
+          </span>
+          <span>
+            <i class="fa fa-times suggestions__icon close"></i>
+          </span>
+        </li>`;
+    }
+    // popular 데이터라면
+    else {
+      html += `
+        <li class="suggestions__item">
+          <span>
+            <i class="fa-solid fa-magnifying-glass suggestions__icon"></i>${item}
+          </span>
+        </li>`;
+    }
+  });
+  suggestionList.innerHTML = html;
+  suggestionBox.classList.add("show");
+});
+
+
 /* 소식 게시판 */
 const noticeIcons = {
   'notice': "fa-bullhorn",
@@ -119,35 +237,34 @@ noticeRenderPosts();
 
 // 아이콘 매핑 (카테고리별)
 const collabIcons = {
-  partner: "fa-handshake",
+  request: "fa-handshake",
   proposal: "fa-lightbulb"
 };
 
-// 탭 필터링 상태
-let collabCurrentTab = "all";
-
 // DOM 요소
-const collabGallery = document.querySelector(".collab-gallery");
-const collabTabButtons = document.querySelectorAll(".tab-button.collab");
+const proposalGallery = document.querySelector(".collab-gallery.proposal .gallery__board");
+const requestGallery = document.querySelector(".collab-gallery.request .gallery__board");
 
 // 필터링 함수
-function collabGetFilteredPosts() {
+function collabGetFilteredPosts(category) {
   let filtered = matchingBoard.filter(p => p.isActive);
-  if (collabCurrentTab !== "all") {
-    filtered = filtered.filter(p => p.category === collabCurrentTab);
-  }
+
+  filtered = filtered.filter(p => p.category === category);
+
   return filtered;
 }
 
 // 렌더링 함수
-function collabRenderPosts() {
+function collabRenderPosts(type, gallery) {
+  if (!gallery) {
+    return;
+  }
 
-  const posts = collabGetFilteredPosts()
-    .slice(0, 4);
+  const posts = collabGetFilteredPosts(type)
+    .slice(0, 10);
 
-  collabGallery.innerHTML = posts.map(p => {
+  gallery.innerHTML = posts.map(p => {
     const companyInfo = company.find(c => c.id === p.companyId) || {};
-    const logo = companyInfo.image ? `/assets/image/ci/${companyInfo.image}` : "/assets/logo/default.png";
     const name = companyInfo.name || "알 수 없는 회사";
 
     const fromDate = new Date(p.validFrom);
@@ -156,36 +273,18 @@ function collabRenderPosts() {
 
     return `
       <div class="collab-card" data-category="${p.category}">
-        <div class="collab-logo">
-          <img src="${logo}" alt="${name} 로고" />
-        </div>
         <div class="collab-content">
-          <h2><i class="fa-solid ${collabIcons[p.category]} collab-icon ${p.category}"></i>${name}</h2>
-          <h3>${p.title}</h3>
-          <p>${p.content}</p>
-          <div>
-            <a href="#" class="collab-link">자세히 보기</a>
-            <span>${period}</span>
-          </div>
+          <h2 class="collab-content__title">${p.title}<b>(${period})</b></h2>
+          <p class="collab-content__desc">${p.content}</p>
         </div>
       </div>
     `;
   }).join("");
 }
 
-
-// 탭 클릭 이벤트
-collabTabButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    collabTabButtons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    collabCurrentTab = btn.dataset.tab;
-    collabRenderPosts();
-  });
-});
-
 // 초기 렌더링
-collabRenderPosts();
+collabRenderPosts("proposal", proposalGallery);
+collabRenderPosts("request", requestGallery);
 
 
 
@@ -233,15 +332,6 @@ function renderCompanyList(list) {
   }
 
   list.forEach(c => {
-    const mapping = companySubMapping.find(m => m.company_id === c.id);
-    const sub = subsCategory.find(s => s.id === mapping?.sub_id);
-    const subName = sub ? sub.name : '미등록';
-    const subColor = sub ? sub.color : '#95a5a6';
-
-    const regionLocalizing = regionsCategory.find(r => r.class === c.region);
-    const regionName = regionLocalizing ? regionLocalizing.name : '미등록';
-    const regionColor = regionLocalizing ? regionLocalizing.color : '#95a5a6';
-
     const hasImage = !!c.image;
 
     const imageSrc = hasImage
@@ -256,45 +346,34 @@ function renderCompanyList(list) {
       : `<div class="company-card__no-image">${c.name}</div>`;
 
     const linkHTML = c.website
-      ? `<a href="${c.website}" class="btn-website" target="_blank">
-          웹사이트 방문
-        </a>`
-      : `<div href="${c.website}" class="btn-website disabled">
-          웹사이트 없음
-        </div>`;
+      ? `<a href="${c.website}" class="actions-website" target="_blank">
+       <i class="fa-solid fa-globe"></i> 웹사이트 방문
+     </a>`
+      : `<div class="actions-website disabled">
+       <i class="fa-solid fa-ban"></i> 웹사이트 없음
+     </div>`;
 
     const item = document.createElement('div');
     item.className = 'company-item';
     item.innerHTML = `
-    <div class="company-card">
-      <div class="company-top">
-        <div class="company-logo">${imageHTML}</div>
-
-        <div class="company-main">
-          <h3 class="company-name">${c.name}</h3>
-
-          <!-- 팔로워 -->
-          <div class="company-follow">
-            <span class="followers"><b>${c.popularity.toLocaleString()}</b> 팔로워</span>
-
-            <button class="btn-follow ${c.isFollowing ? 'unfollow' : 'follow'}" data-id="${c.id}">
-              ${c.isFollowing ? '<b class="follow">✔</b> 관심기업' : '<b class="unfollow">♥</b> 관심기업 추가'}
-            </button>
+    <div class="company-card meta">
+      <div class="company-card-top">
+        <div class="company-card__left">
+          <div class="company-card__thumb">
+            ${imageHTML}
           </div>
         </div>
-      </div>
 
-      <div class="company-right">
-        <a href="/company/${c.id}" class="btn-detail">
-          상세보기
-        </a>
-        ${linkHTML}
-      </div>
-
-      <!-- 태그 영역 -->
-      <div class="company-tags">
-        <span class="tag industry" style="background-color: ${subColor}">${subName}</span>
-        <span class="tag region" style="background-color: ${regionColor}">${regionName}</span>
+        <div class="company-card__right">
+          <div class="company-card__text">
+            <h3 class="company-card__name">${c.name}</h3>
+            <!-- 팔로워 -->
+            <p class="company-card__followers"><b>${c.popularity.toLocaleString()}</b> 팔로워</p>
+          </div>      
+          <div class="company-card__actions">
+            ${linkHTML}
+          </div>
+        </div>      
       </div>
     </div> 
     `;
@@ -404,3 +483,24 @@ partnerTabButtons.forEach(tab => {
 });
 
 if (defaultMainTab) defaultMainTab.click();
+
+
+
+// 사이드 패널
+const panel = document.getElementById("sidePanel");
+const panelClose = document.getElementById("panelClose");
+
+// 닫기 버튼
+panelClose.addEventListener("click", () => {
+  panel.classList.remove("open");
+});
+
+// 상세보기 버튼 클릭
+document.addEventListener("click", (e) => {
+
+  const metaCard = e.target.closest(".company-card.meta");
+
+  if (metaCard) {
+    panel.classList.add("open");
+  }
+});

@@ -89,6 +89,6 @@ form.addEventListener("submit", (e) => {
         sessionStorage.setItem("loggedUser", JSON.stringify(loginData));
 
         // 실제라면 여기에 페이지 이동 로직 추가
-        window.location.href = "/page/main/explore.html";
+        window.location.href = "/page/matching/matching-meta.html";
     }
 });

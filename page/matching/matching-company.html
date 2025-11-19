@@ -100,13 +100,20 @@
 
     <!-- 🔍 통합 검색 -->
     <section class="main__top">
-      <h1 class="search-title">비투콜라 기업검색</h1>
+      <h1 class="search-title">기업검색</h1>
       <div class="search-box">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
         <input type="text" class="main__search-input" placeholder="기업명, 업종, 키워드 등을 검색하세요." />
         <button class="search-btn">검색</button>
+        <div class="search-suggestions">
+          <ul class="suggestions__list"></ul>
+          <div class="suggestions__bottom">
+            <p>검색기록 삭제</p>
+            <p>닫기</p>
+          </div>
+        </div>
       </div>
-      <div class="search-suggestions">
+      <div class="search-tags">
         <span class="tag-b2b">#B2B</span>
         <span class="tag-marketing">#마케팅</span>
         <span class="tag-tech">#기술제휴</span>
@@ -116,235 +123,106 @@
     </section>
 
     <!-- 필터 -->
-    <section class="main__mid">
-      <div class="search__filter">
-        <div class="filter__helper">
-          <h2 class="helper-title">당신의 <b>비즈니스</b>와 맞는 <b>기업</b>을 찾아보세요</h2>
-          <p class="helper-desc">검증된 기업 정보를 기반으로, 당신의 프로젝트와 가장 잘 맞는 파트너를 검색하고 연결할 수 있습니다.</p>
-        </div>
+    <section class="main__mid l">
+      <div class="main__block s filter">
+        <div class="fillter__container">
+          <div class="fillter__header">
+            <h2 class="fillter__title">필터</h2>
+            <p class="fillter__reset">초기화</p>
+          </div>
 
-        <ul class="filter__list">
-          <li class="filter__item">
-            <div class="filter__item-header">지역</div>
-            <ul class="filter__content-list">
-              <li class="filter__content-list-item tab-button gyeonggi active">경기권</li>
-              <li class="filter__content-list-item tab-button chungnam active">충남권</li>
-              <li class="filter__content-list-item tab-button chungbuk">충북권</li>
-              <li class="filter__content-list-item tab-button jeonnam">전남권</li>
-              <li class="filter__content-list-item tab-button jeonbuk">전북권</li>
-              <li class="filter__content-list-item tab-button gyeongnam active">경남권</li>
-              <li class="filter__content-list-item tab-button gyeongbuk">경북권</li>
-              <li class="filter__content-list-item tab-button gangwon">강원</li>
-              <li class="filter__content-list-item tab-button jeju">제주</li>
-            </ul>
-          </li>
-          <li class="filter__item">
-            <div class="filter__item-header">업종</div>
-            <ul class="filter__content-list industry">
-              <li class="filter__content-list-item tab-button industry active" style="--sub-color: #5CAED6;">제조업</li>
-              <li class="filter__content-list-item tab-button industry" style="--sub-color: #AA81C1;">서비스업</li>
-              <li class="filter__content-list-item tab-button industry" style="--sub-color: #E69A66;">유통·물류</li>
-              <li class="filter__content-list-item tab-button industry active" style="--sub-color: #C7B042;">건설·부동산</li>
-              <li class="filter__content-list-item tab-button industry" style="--sub-color: #6482A0;">공공·비영리</li>
-              <li class="filter__content-list-item tab-button industry" style="--sub-color: #4EB678;">에너지·환경</li>
-            </ul>
-          </li>
-          <li class="filter__item">
-            <div class="filter__item-header">관심기업만</div>
-            <div class="filter__content">
-              <input type="checkbox" class="checkbox" id="chk1">
-              <label for="chk1"></label>
+          <div class="fillter__content">
+            <div class="fillter__sub">
+              <h3 class="fillter__sub-title">위치</h3>
+              <ul class="fillter__sub-list">
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region1">
+                  <label class="fillter__label" for="region1"></label>
+                  <span class="fillter__label-text">경기권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region2">
+                  <label class="fillter__label" for="region2"></label>
+                  <span class="fillter__label-text">충남권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region3">
+                  <label class="fillter__label" for="region3"></label>
+                  <span class="fillter__label-text">충북권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region4">
+                  <label class="fillter__label" for="region4"></label>
+                  <span class="fillter__label-text">전남권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region5">
+                  <label class="fillter__label" for="region5"></label>
+                  <span class="fillter__label-text">전북권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region6">
+                  <label class="fillter__label" for="region6"></label>
+                  <span class="fillter__label-text">경남권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region7">
+                  <label class="fillter__label" for="region7"></label>
+                  <span class="fillter__label-text">경북권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region8">
+                  <label class="fillter__label" for="region8"></label>
+                  <span class="fillter__label-text">강원</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region9">
+                  <label class="fillter__label" for="region9"></label>
+                  <span class="fillter__label-text">제주</span>
+                </li>
+              </ul>
             </div>
-          </li>
-          <li class="filter__buttons">
-            <button class="filter__reset">필터 초기화</button>
-            <button class="filter__apply">필터 적용하기</button>
-          </li>
-        </ul>
+            <div class="fillter__sub">
+              <h3 class="fillter__sub-title">업종</h3>
+              <ul class="fillter__sub-list" id="categoryList">
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-
-    <section class="main__bot">
       <div class="main__block xl company">
-        <div class="sorting__controls">
-          <div class="sort-options">
-            <span class="sort active" data-sort="popular">인기순</span>
-            <span class="sort" data-sort="new">신규순</span>
+        <div class="result__container">
+          <div class="result__header">
+            <div class="result__left">
+              <p class="result__count">총 34개</p>
+              <ul class="result__fillter-list"></ul>
+            </div>
+            <div class="result__right">
+              <div class="result__sort">
+                <p>인기순<i class="fa-solid fa-chevron-down"></i></p>
+                <ul class="result__sort-list">
+                  <li class="result__sort-item">최신순</li>
+                  <li class="result__sort-item">평점순</li>
+                  <li class="result__sort-item">완료건순</li>
+                  <li class="result__sort-item">완료율순</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="view-count">
-            <label for="view-count">페이지당 개수</label>
-            <select id="view-count">
-              <option value="10">10개씩 보기</option>
-              <option value="20">20개씩 보기</option>
-              <option value="50">50개씩 보기</option>
-            </select>
+          <div id="companyList" class="company-list"></div>
+          <div class="pagination">
+            <button class="prev">이전</button>
+            <span class="page-numbers">
+              <button class="page active">1</button>
+              <button class="page">2</button>
+              <button class="page">3</button>
+              <button class="page">4</button>
+              <button class="page">5</button>
+            </span>
+            <button class="next">다음</button>
           </div>
-        </div>
-
-        <div class="company-board-content"></div>
-
-        <div class="pagination">
-          <button class="prev">이전</button>
-          <span class="page-numbers">
-            <button class="page active">1</button>
-            <button class="page">2</button>
-            <button class="page">3</button>
-            <button class="page">4</button>
-            <button class="page">5</button>
-          </span>
-          <button class="next">다음</button>
         </div>
       </div>
     </section>
-
-    <div id="sidePanel" class="side-panel">
-      <div class="panel-header">
-        <h3>상세 정보</h3>
-        <button id="panelClose" class="panel-close">×</button>
-      </div>
-
-      <section class="company-detail">
-        <!-- ✅ 상단 기업 정보 -->
-        <div class="company-detail__header">
-          <img src="/assets/image/ci/sems.png" alt="기업 로고" class="company-detail__image" />
-          <div class="company-detail__info">
-            <h1 class="company-detail__name">주식회사 셈즈</h1>
-            <p class="company-detail__desc">
-              상수도 관로 세척 기술을 보유한 환경 전문 기업입니다.
-            </p>
-            <p class="company-detail__meta">
-              <i class="fa-solid fa-location-dot company-detail__meta-icon"></i> 인천
-              <i class="fa-solid fa-industry company-detail__meta-icon"></i> 도매/소매업
-            </p>
-          </div>
-        </div>
-
-        <div class="company-detail__actions">
-          <button class="company-detail__btn company-detail__btn--like">
-            <i class="fa-regular fa-heart"></i> 관심기업
-          </button>
-          <button class="company-detail__btn company-detail__btn--collab">
-            <i class="fa-solid fa-handshake"></i> 협업 제안
-          </button>
-          <a href="#" target="_blank" class="company-detail__btn company-detail__btn--link">
-            <i class="fa-solid fa-globe"></i> 공식 홈페이지
-          </a>
-        </div>
-
-        <!-- ✅ 기본 정보 -->
-        <div class="company-detail__section">
-          <h2 class="company-detail__title">기업 소개</h2>
-          <div class="company-detail__desc">
-            주식회사 샘즈는 스마트한 기술력과 풍부한 현장 경험을 바탕으로,
-            단순한 상수도 관리에서 나아가 지속 가능한 물 환경을 실현하는 종합 솔루션을 제공합니다.
-            사람과 환경, 그리고 미래를 유기적으로 연결하는 물산업의
-            새로운 기준이자, 신뢰받는 파트너로서의 역할을 성실히 수행해나가겠습니다.
-          </div>
-        </div>
-
-        <!-- ✅ 협업 통계 -->
-        <div class="company-detail__section">
-          <h2 class="company-detail__title">협업 현황</h2>
-          <div class="company-detail__stats">
-            <div class="company-detail__stat">
-              <span class="company-detail__stat-value">38</span>
-              <span class="company-detail__stat-label">총 협업 건수</span>
-            </div>
-            <div class="company-detail__stat">
-              <span class="company-detail__stat-value">92%</span>
-              <span class="company-detail__stat-label">협업 성공률</span>
-            </div>
-            <div class="company-detail__stat">
-              <span class="company-detail__stat-value">4.7</span>
-              <span class="company-detail__stat-label">평균 평점</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- ✅ 협업 리뷰 섹션 -->
-        <div class="company-detail__section company-review">
-          <h2 class="company-detail__title">협업 리뷰</h2>
-
-          <!-- 총 평점 -->
-          <div class="company-review__summary">
-            <p class="company-review__average">
-              <i class="fa-solid fa-star" style="color: var(--accent-primary);"></i> 총 평점:
-              <strong>4.5 / 5.0</strong>
-            </p>
-            <p class="company-review__count">총 12건의 협업 리뷰</p>
-          </div>
-
-          <!-- 블라인드 처리된 리뷰 영역 
-          <div class="company-review__locked" id="reviewLocked">
-            <p><i class="fa-solid fa-lock"></i> 리뷰 열람은 기업 정보 등록 후 가능합니다.</p>
-            <button class="company-review__unlock-btn" id="unlockReviewsBtn">
-              <i class="fa-solid fa-user-plus"></i> 내 정보 등록하기
-            </button>
-          </div>
-          -->
-          <!-- 실제 리뷰 
-          <div class="company-review__list" id="reviewList">
-            <div class="company-review__item">
-              <div class="company-review__item-top">
-                <p class="company-review__author">
-                  <i class="fa-solid fa-comment-dots"></i> 하이드로텍
-                </p>
-                <div class="company-review__stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-              <p class="company-review__text">
-                신속하고 정확한 협업이었습니다. 일정 관리가 탁월했습니다!
-              </p>
-            </div>
-
-            <div class="company-review__item">
-              <div class="company-review__item-top">
-                <p class="company-review__author">
-                  <i class="fa-solid fa-comment-dots"></i> 블루웨이브
-                </p>
-                <div class="company-review__stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-              </div>
-              <p class="company-review__text">
-                전반적으로 만족스러웠습니다. 개선 제안도 적극적으로 수용해 주셨어요.
-              </p>
-            </div>
-          </div>
-          -->
-        </div>
-
-
-        <!-- ✅ 비슷한 기업 추천 
-        <div class="company-detail__section">
-          <h2 class="company-detail__title">비슷한 기업</h2>
-          <div class="company-detail__related">
-            <div class="company-detail__related-card">
-              <img src="" alt="EcoPure" />
-              <p class="company-detail__related-name">EcoPure</p>
-              <p class="company-detail__related-field">수처리</p>
-            </div>
-            <div class="company-detail__related-card">
-              <img src="" alt="HydroTech" />
-              <p class="company-detail__related-name">HydroTech</p>
-              <p class="company-detail__related-field">상하수도</p>
-            </div>
-          </div>
-        </div>
-        -->
-        <a href="" class="more-link">더 자세히 알아보기</a>
-      </section>
-    </div>
-
   </main>
 
   <footer class="footer">
@@ -377,6 +255,7 @@
     </div>
   </footer>
 
+  <script src="/temp-data/board-data.js"></script>
   <script src="/temp-data/category-data.js"></script>
   <script src="/temp-data/company-data.js"></script>
 

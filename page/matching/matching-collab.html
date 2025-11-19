@@ -100,13 +100,20 @@
 
     <!-- 🔍 통합 검색 -->
     <section class="main__top">
-      <h1 class="search-title">비투콜라 협업게시판</h1>
+      <h1 class="search-title">협업게시판</h1>
       <div class="search-box">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
         <input type="text" class="main__search-input" placeholder="기업명, 업종, 키워드 등을 검색하세요." />
         <button class="search-btn">검색</button>
+        <div class="search-suggestions">
+          <ul class="suggestions__list"></ul>
+          <div class="suggestions__bottom">
+            <p>검색기록 삭제</p>
+            <p>닫기</p>
+          </div>
+        </div>
       </div>
-      <div class="search-suggestions">
+      <div class="search-tags">
         <span class="tag-b2b">#B2B</span>
         <span class="tag-marketing">#마케팅</span>
         <span class="tag-tech">#기술제휴</span>
@@ -116,116 +123,109 @@
     </section>
 
     <!-- 필터 -->
-    <section class="main__mid">
-      <div class="search__filter">
-        <div class="filter__helper">
-          <h2 class="helper-title"><b>요청</b>과 <b>제안</b>이 연결되는 협업 공간</h2>
-          <p class="helper-desc">
-            우리에게 필요한 기업, 그리고 우리를 찾는 기업이 자연스럽게 연결되는<br />
-            빠르고 실용적인 협업 공간입니다.
-          </p>
-        </div>
+    <section class="main__mid l">
+      <div class="main__block s filter">
+        <div class="fillter__container">
+          <div class="fillter__header">
+            <h2 class="fillter__title">필터</h2>
+            <p class="fillter__reset">초기화</p>
+          </div>
 
-        <ul class="filter__list">
-          <li class="filter__item">
-            <div class="filter__item-header">지역</div>
-            <ul class="filter__content-list">
-              <li class="filter__content-list-item tab-button gyeonggi active">경기권</li>
-              <li class="filter__content-list-item tab-button chungnam active">충남권</li>
-              <li class="filter__content-list-item tab-button chungbuk">충북권</li>
-              <li class="filter__content-list-item tab-button jeonnam">전남권</li>
-              <li class="filter__content-list-item tab-button jeonbuk">전북권</li>
-              <li class="filter__content-list-item tab-button gyeongnam active">경남권</li>
-              <li class="filter__content-list-item tab-button gyeongbuk">경북권</li>
-              <li class="filter__content-list-item tab-button gangwon">강원</li>
-              <li class="filter__content-list-item tab-button jeju">제주</li>
-            </ul>
-          </li>
-          <li class="filter__item">
-            <div class="filter__item-header">업종</div>
-            <ul class="filter__content-list industry">
-              <li class="filter__content-list-item tab-button industry active" style="--sub-color: #5CAED6;">제조업</li>
-              <li class="filter__content-list-item tab-button industry" style="--sub-color: #AA81C1;">서비스업</li>
-              <li class="filter__content-list-item tab-button industry" style="--sub-color: #E69A66;">유통·물류</li>
-              <li class="filter__content-list-item tab-button industry active" style="--sub-color: #C7B042;">건설·부동산</li>
-              <li class="filter__content-list-item tab-button industry" style="--sub-color: #6482A0;">공공·비영리</li>
-              <li class="filter__content-list-item tab-button industry" style="--sub-color: #4EB678;">에너지·환경</li>
-            </ul>
-          </li>
-          <li class="filter__item">
-            <div class="filter__item-header">관심기업만</div>
-            <div class="filter__content">
-              <input type="checkbox" class="checkbox" id="chk1">
-              <label for="chk1"></label>
+          <div class="fillter__content">
+            <div class="fillter__sub">
+              <h3 class="fillter__sub-title">위치</h3>
+              <ul class="fillter__sub-list">
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region1">
+                  <label class="fillter__label" for="region1"></label>
+                  <span class="fillter__label-text">경기권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region2">
+                  <label class="fillter__label" for="region2"></label>
+                  <span class="fillter__label-text">충남권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region3">
+                  <label class="fillter__label" for="region3"></label>
+                  <span class="fillter__label-text">충북권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region4">
+                  <label class="fillter__label" for="region4"></label>
+                  <span class="fillter__label-text">전남권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region5">
+                  <label class="fillter__label" for="region5"></label>
+                  <span class="fillter__label-text">전북권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region6">
+                  <label class="fillter__label" for="region6"></label>
+                  <span class="fillter__label-text">경남권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region7">
+                  <label class="fillter__label" for="region7"></label>
+                  <span class="fillter__label-text">경북권</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region8">
+                  <label class="fillter__label" for="region8"></label>
+                  <span class="fillter__label-text">강원</span>
+                </li>
+                <li class="fillter__sub-item">
+                  <input type="checkbox" class="filter__checkbox" id="region9">
+                  <label class="fillter__label" for="region9"></label>
+                  <span class="fillter__label-text">제주</span>
+                </li>
+              </ul>
             </div>
-          </li>
-          <li class="filter__buttons">
-            <button class="filter__reset">필터 초기화</button>
-            <button class="filter__apply">필터 적용하기</button>
-          </li>
-        </ul>
+            <div class="fillter__sub">
+              <h3 class="fillter__sub-title">업종</h3>
+              <ul class="fillter__sub-list" id="categoryList">
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-
-<section class="collab-board">
-  <div class="collab-filter">
-    <select id="categoryFilter">
-      <option value="">전체</option>
-      <option value="proposal">제안</option>
-      <option value="partner">요청</option>
-    </select>
-
-    <select id="deadlineFilter">
-      <option value="">전체</option>
-      <option value="soon">마감임박</option>
-      <option value="later">여유</option>
-    </select>
-
-    <select id="regionFilter">
-      <option value="">전체 지역</option>
-      <option value="seoul">서울</option>
-      <option value="gyeonggi">경기</option>
-    </select>
-  </div>
-
-  <div class="collab-list">
-    <!-- JS로 카드 렌더링 -->
-  </div>
-</section>
-
-    <section class="main__bot">
       <div class="main__block xl company">
-        <div class="sorting__controls">
-          <div class="sort-options">
-            <span class="sort active" data-sort="popular">인기순</span>
-            <span class="sort" data-sort="new">신규순</span>
+        <div class="result__container">
+          <div class="result__header">
+            <div class="result__left">
+              <p class="result__count">총 34개</p>
+              <ul class="result__fillter-list"></ul>
+            </div>
+            <div class="result__right">
+              <div class="result__sort">
+                <p>최신순<i class="fa-solid fa-chevron-down"></i></p>
+                <ul class="result__sort-list">
+                  <li class="result__sort-item">최신순</li>
+                  <li class="result__sort-item">조회수순</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="view-count">
-            <label for="view-count">페이지당 개수</label>
-            <select id="view-count">
-              <option value="10">10개씩 보기</option>
-              <option value="20">20개씩 보기</option>
-              <option value="50">50개씩 보기</option>
-            </select>
+          <div class="result__header-sub">
+            <button class="result__header-sub-diviser active">전체글</button>
+            <button class="result__header-sub-diviser">협업요청</button>
+            <button class="result__header-sub-diviser">협업제안</button>
           </div>
-        </div>
-
-        <div class="company-board-content"></div>
-
-        <div class="pagination">
-          <button class="prev">이전</button>
-          <span class="page-numbers">
-            <button class="page active">1</button>
-            <button class="page">2</button>
-            <button class="page">3</button>
-            <button class="page">4</button>
-            <button class="page">5</button>
-          </span>
-          <button class="next">다음</button>
+          <div id="collabList" class="collab-list"></div>
+          <div class="pagination">
+            <button class="prev">이전</button>
+            <span class="page-numbers">
+              <button class="page active">1</button>
+              <button class="page">2</button>
+              <button class="page">3</button>
+              <button class="page">4</button>
+              <button class="page">5</button>
+            </span>
+            <button class="next">다음</button>
+          </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
