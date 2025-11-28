@@ -203,6 +203,7 @@
     opacity: 0;
     transition: all 1s ease;
     display: flex;
+    gap: 40px;
 }
 
 /* PC 중앙 이미지: 아래→위, 투명도 점차 증가 */
@@ -224,6 +225,7 @@
     max-width: 600px;
     height: auto;
 }
+
 
 /* 좌측 슬라이드 인 이미지 */
 .cta__image-box--left {
@@ -252,7 +254,6 @@
 }
 
 .cta__image-text {
-    margin-top: 48px;
     font-size: var(--font-size-h3);
     opacity: 0;
     transform: translateY(20px);

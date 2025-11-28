@@ -114,7 +114,7 @@
     visibility: hidden;
     overflow: hidden;
     font-size: var(--font-size-body);
-    transition: all .4s;
+    transition: all .2s;
 }
 
 .header__nav-item:hover .header__nav-sub-list {
