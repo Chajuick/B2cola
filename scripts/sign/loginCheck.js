@@ -1,3 +1,5 @@
+
+/*
 const loggedUser = sessionStorage.getItem("loggedUser");
 const currentPath = window.location.pathname;
 
@@ -65,3 +67,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+*/
