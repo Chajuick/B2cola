@@ -107,7 +107,7 @@ function renderCompanies(filteredCompanies) {
                 <p class="company-card__subs">${c.detail}</p>
                 <p class="company-card__category" style="background-color: ${subColor}">${subName}</p>                     
                 <div class="company-card__buttons">
-                    <a href="/page/board/detail.html" class="company-card__detail">
+                    <a href="/B2cola/page/board/detail.html" class="company-card__detail">
                         <i class="fa-solid fa-circle-info"></i> 상세보기
                     </a>           
                     ${linkHTML}

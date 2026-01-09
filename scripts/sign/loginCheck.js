@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
           ${user.notifications > 0 ? `<span class="notification-badge">${user.notifications}</span>` : ""}
         </div>
         <div class="header__user-dropdown" id="userDropdown">
-          <a href="/page/user/profile.html">프로필</a>
-          <a href="/page/user/favorites.html">관심목록</a>
-          <a href="/page/user/requests.html">
+          <a href="/B2cola/page/user/profile.html">프로필</a>
+          <a href="/B2cola/page/user/favorites.html">관심목록</a>
+          <a href="/B2cola/page/user/requests.html">
             제안 확인
             ${user.notifications > 0 ? `<span class="notif-count">${user.notifications}</span>` : ""}
           </a>
@@ -54,8 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>   
       </div>
       <div class="header__actions-lang">
-          <a href="/?lang=ko" class="header__lang-option header__lang-option--active">KOR</a>
-          <a href="/?lang=en" class="header__lang-option">ENG</a>
+          <a href="/B2cola/?lang=ko" class="header__lang-option header__lang-option--active">KOR</a>
+          <a href="/B2cola/?lang=en" class="header__lang-option">ENG</a>
       </div>      
     `;
 
