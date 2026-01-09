@@ -3,29 +3,29 @@ const currentPath = window.location.pathname;
 
 // 로그인 예외 페이지 리스트
 const publicPages = [
-  "/index.html",
-  "/page/sign/login.html",
-  "/page/sign/signup.html",
-  "/page/about/about-intro.html",
-  "/page/about/about-guide.html",
-  "/page/about/about-partnership.html",
-  "/page/matching/matching-meta.html",
-  "/"
+  "B2cola/index.html",
+  "B2cola/page/sign/login.html",
+  "B2cola/page/sign/signup.html",
+  "B2cola/page/about/about-intro.html",
+  "B2cola/page/about/about-guide.html",
+  "B2cola/page/about/about-partnership.html",
+  "B2cola/page/matching/matching-meta.html",
+  "B2cola/"
 ];
 
 // ✅ 로그인 상태에서 로그인/회원가입 페이지 접근 시 리다이렉트
 if (
   loggedUser &&
-  (currentPath === "/page/sign/login.html" || currentPath === "/page/sign/signup.html")
+  (currentPath === "B2cola/page/sign/login.html" || currentPath === "B2cola/page/sign/signup.html")
 ) {
-  window.location.href = "/page/matching/matching-meta.html";
+  window.location.href = "B2cola/page/matching/matching-meta.html";
 }
 
 
 // 로그인 체크 (예외 페이지는 제외)
 if (!loggedUser && !publicPages.includes(currentPath)) {
   alert("로그인이 필요합니다.");
-  window.location.href = "/page/sign/login.html";
+  window.location.href = "B2cola/page/sign/login.html";
 }
 
 // DOM 로드 이후 실행
